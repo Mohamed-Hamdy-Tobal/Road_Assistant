@@ -1,0 +1,28 @@
+{
+    "Index": {
+        "title": "Hello World"
+    },
+    "Landing": {
+        "title": "THE MOST POWERFUL SOLUTION",
+        "mainTitle": "Roadside Assistance",
+        "desc": "With you on the road 24 hours a day, our Roadside Assistance service is your reliable companion in times of vehicle emergencies. We understand that unexpected breakdowns or mishaps can happen anytime, anywhere, and that's why we're committed to providing swift and comprehensive support to keep you moving forward.",
+        "button": "Learn More"
+    },
+    "section": [
+        {
+            "title": "Some title",
+            "subtitle": "Some subtitle",
+            "description": "Some description"    
+        },
+        {
+            "title": "Some title 1",
+            "subtitle": "Some subtitle 1",
+            "description": "Some description 1"    
+        },
+        {
+            "title": "Some title 2",
+            "subtitle": "Some subtitle 2",
+            "description": "Some description 2"    
+        }
+    ]
+}

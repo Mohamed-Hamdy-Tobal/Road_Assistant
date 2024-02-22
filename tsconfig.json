@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/career/page.jsx", "components/Home/WorkWith.jsx", "components/Home/HomeServices.jsx", "components/test/myTest.jsx", "components/ScrollToTopButton.jsx", "components/Blog/Blog.jsx", "components/Home/Projects.jsx", "app/career/[careerID]/page.jsx", "app/blog/[blog]/page.jsx", "components/Contact/From.jsx", "components/About/Industry.jsx", "app/[locale]/term-and-conditions/page.jsx", "app/[locale]/privacy-policy/page.jsx"],
+  "exclude": ["node_modules"]
+}

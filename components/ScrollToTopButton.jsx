@@ -29,7 +29,7 @@ const ScrollToTopButton = () => {
     return (
         <div className={`fixed z-[9] bottom-8 right-8 ${isVisible ? 'opacity-[1]' : 'opacity-[0]'} transition-all duration-300`}>
             <button
-                className="bg-mainColor text-white w-[45px] h-[45px] text-[20px] rounded-full hover:bg-[#1e4486] transition-all duration-300"
+                className="bg-mainColor text-white w-[45px] h-[45px] text-[20px] rounded-full hover:bg-[#41862fd6] transition-all duration-300"
                 onClick={scrollToTop}
             >
                 <FontAwesomeIcon icon={faArrowUp} />

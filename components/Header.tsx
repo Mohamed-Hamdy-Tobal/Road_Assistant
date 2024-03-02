@@ -30,7 +30,7 @@ const Header = () => {
         { href: `/${localActive}/about`, key: 'حول', text: 'حول' },
         { href: `/${localActive}/services`, key: 'الخدمات', text: 'الخدمات' },
         { href: `/${localActive}/blog`, key: 'المدونة', text: 'المدونة' },
-        { href: `/${localActive}/career`, key: 'الوظائف', text: 'الوظائف' },
+        // { href: `/${localActive}/career`, key: 'الوظائف', text: 'الوظائف' },
         { href: `/${localActive}/contact`, key: 'اتصل بنا', text: 'اتصل بنا' },
     ];
     const NavLink = localActive == 'en' ? NavLinksEN : NavLinksAR

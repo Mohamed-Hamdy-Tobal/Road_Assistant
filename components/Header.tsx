@@ -21,8 +21,8 @@ const Header = () => {
         { href: `/${localActive}`, key: 'Home', text: 'Home' },
         { href: `/${localActive}/about`, key: 'About', text: 'About' },
         { href: `/${localActive}/services`, key: 'Services', text: 'Services' },
-        { href: `/${localActive}/blog`, key: 'Blog', text: 'Blog' },
-        { href: `/${localActive}/career`, key: 'Career', text: 'Career' },
+        { href: `/${localActive}/blogs`, key: 'Blog', text: 'Blog' },
+        // { href: `/${localActive}/career`, key: 'Career', text: 'Career' },
         { href: `/${localActive}/contact`, key: 'Contact', text: 'Contact' },
     ];
     const NavLinksAR = [

@@ -33,8 +33,8 @@ const Header = () => {
         { href: `/${localActive}/career`, key: 'الوظائف', text: 'الوظائف' },
         { href: `/${localActive}/contact`, key: 'اتصل بنا', text: 'اتصل بنا' },
     ];
-    const NavLink = localActive == 'en'? NavLinksEN:NavLinksAR
-    
+    const NavLink = localActive == 'en' ? NavLinksEN : NavLinksAR
+
 
 
     const [isHeaderOpen, setIsHeaderOpen] = useState(false)
@@ -55,7 +55,7 @@ const Header = () => {
 
             if (window.scrollY > scrollThreshold) {
                 if (headerRef.current) {
-                    headerRef.current.style.background = '#f0f6fb';
+                    headerRef.current.style.background = '#61835c';
                     // headerRef.current.style.background = '#DCF1F4';
                     headerRef.current.style.padding = '14px 0px';
                     headerRef.current.style.boxShadow =
@@ -93,10 +93,10 @@ const Header = () => {
                 </Link>
                 <div className="main-menu-mobile flex justify-end items-center flex-row-reverse">
                     <button
-                        className="block md:hidden focus:outline-none z-20 my-btn-header"
+                        className="block md:hidden focus:outline-none my-btn-header"
                         onClick={handleMenuToggle}
                     >
-                        <span className={` mobile-menubar text-secoColor text-[25px] transition-all duration-500 ${!isHeaderOpen ? '' : 'close-icon'}`}>{!isHeaderOpen ? <FontAwesomeIcon icon={faBars} /> : <FontAwesomeIcon icon={faClose} />}</span>
+                        <span className={` mobile-menubar text-secoColor text-[25px] transition-all duration-500 ${!isHeaderOpen ? '' : 'close-icon'}`}><FontAwesomeIcon icon={faBars} /></span>
                         {/* <span className={`z-20 mobile-menubar theme-color text-[22px] transition-all duration-500`}><FontAwesomeIcon icon={faBars} /></span> */}
                     </button>
                     <div className="switcher1 block lg:hidden">
@@ -104,25 +104,35 @@ const Header = () => {
                     </div>
                 </div>
                 <nav className={`${isHeaderOpen ? 'menu-show' : ''} flex gap-6 justify-center items-center menu-toggle transition-all duration-300`}>
-                    <h1 className="block md:hidden text-[#ccc] text-[30px] md:text-[22px] absolute top-[45px] left-[28px] font-bold ite uppercase self-baseline">{localActive == 'en'?"Kassel":"كاسل"} <span className="block w-1/2 mx-auto h-[3px] bg-mainColor absolute bottom-[3px] ml-[25%] translate-y-[6px] rounded-[3px]"></span></h1>
-                    <ul className={`navs-menu flex justify-between items-center md:gap-5 mt-[120px] md:mt-[0px] ${localActive == 'ar'? "reflect":""}`}>
+                    <div className="toggle-mobile flex justify-between items-center w-full pt-[30px]">
+                        {/* <h1 className="block md:hidden text-[#ccc] text-[30px] md:text-[22px] font-bold ite uppercase self-baseline">{localActive == 'en' ? "RA" : "مساعد الطريق"} <span className="block w-1/2 mx-auto h-[3px] bg-secoColor absolute bottom-[3px] ml-[25%] translate-y-[6px] rounded-[3px]"></span></h1> */}
+                        <Image src="/logo-white.svg" alt='logo' className="lock md:hidden" width={60} height={20} />
+                        <button
+                            className="block md:hidden focus:outline-none my-btn-header close-toggle"
+                            onClick={handleMenuToggle}
+                        >
+                            <span className={` mobile-menubar text-[#ccc] text-[25px] transition-all duration-500 ${!isHeaderOpen ? '' : 'close-icon'}`}><FontAwesomeIcon icon={faClose} /></span>
+                            {/* <span className={`z-20 mobile-menubar theme-color text-[22px] transition-all duration-500`}><FontAwesomeIcon icon={faBars} /></span> */}
+                        </button>
+                    </div>
+                    <ul className={`navs-menu flex justify-between items-center md:gap-5 mt-[20px] md:mt-[0px] ${localActive == 'ar' ? "reflect" : ""}`}>
                         {NavLink.map((nav) => <li
                             key={nav.key}
                             className="md:min-w-[70px] text-center"
                         ><Link
                             href={`${nav.href}`}
                             onClick={handleMenuToggle}
-                            className="text-white inline-block relative main-link-header"
-                            // className={`${(pathname === nav.href)
-                            //     ? 'activeLink'
-                            //     : ''
-                            //     } text-white inline-block hover:scale-105 md:hover:scale-100 hover:text-secoColor font-bold transition-all duration-500`}
+                            // className="text-white inline-block relative main-link-header"
+                            className={`${(pathname === nav.href)
+                                ? 'activeLink'
+                                : ''
+                                } text-white inline-block relative main-link-header transition-all duration-500`}
                         >
                                 {nav.text}
                                 <span className={`span-head ${(pathname === nav.href)
-                                ? 'activeLink'
-                                : ''
-                                } text-white inline-block hover:scale-105 md:hover:scale-100 hover:text-secoColor font-bold transition-all duration-500`}></span>
+                                    ? 'activeLinkSpan'
+                                    : ''
+                                    } text-white inline-block hover:scale-105 md:hover:scale-100 hover:text-secoColor font-bold transition-all duration-500`}></span>
                             </Link></li>)}
                     </ul>
                     <div className="switcher2 hidden lg:block">

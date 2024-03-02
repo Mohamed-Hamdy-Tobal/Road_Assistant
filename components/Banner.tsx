@@ -13,12 +13,12 @@ interface BannerProps {
 
 const Banner = ({ bannerTitle, path, bref }: BannerProps) => {
     const shapes = [
-        { src: "/page-shape1.png", classes: "d-none w-[14px] h-[14px] opacity-[40%] absolute lg:inline-block s-shape", style: { top: '50%',left: '14%'} },
-        { src: "/page-shape2.png", classes: "d-none w-[14px] h-[14px] opacity-[40%] absolute lg:inline-block s-shape", style: {  top: '145px',left: '35%' } },
-        { src: "/page-shape4.png", classes: "d-none w-[23px] h-[12px] opacity-[40%] absolute lg:inline-block", style: { bottom: '60px',right: '35%'  } },
-        { src: "/page-shape5.png", classes: "d-none  w-[60px] h-[14px] opacity-[40%] absolute lg:inline-block animate-moveRight", style: { bottom: '140px',right: '7%' } },
-        { src: "/page-shape6.png", classes: "d-none w-[54px] h-[10px] opacity-[40%] absolute lg:inline-block animate-moveRight", style: {top: '40%',right: '18%'} },
-        { src: "/page-shape1.png", classes: "d-none w-[14px] h-[14px] opacity-[40%] absolute lg:inline-block s-shape", style: { top: '130px',right: '8%' } },
+        { src: "/icon-1.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block s-shape", style: { top: '50%',left: '14%'} },
+        { src: "/icon-2.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block s-shape animate-moveRight", style: {  top: '145px',left: '35%' } },
+        { src: "/icon-3.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block", style: { bottom: '60px',right: '35%'  } },
+        { src: "/icon-4.png", classes: "d-none  w-[50px] h-auto opacity-[58%] absolute lg:inline-block animate-moveTop", style: { bottom: '140px',right: '7%' } },
+        { src: "/icon-5.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block animate-moveRight", style: {top: '58%',right: '18%'} },
+        { src: "/icon-6.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block s-shape", style: { top: '130px',right: '8%' } },
     ];
 
     const localActive = useLocale()
@@ -53,7 +53,7 @@ const Banner = ({ bannerTitle, path, bref }: BannerProps) => {
                 <div className="content-banner mt-[50px]">
                     <h5 className='text-mainColor text-[18px] font-bold'>{bref}</h5>
                     <h3 className='title text-center'>{bannerTitle}</h3>
-                <div className='path z-[2]'>
+                    <div className='path z-[2]'>
                         <Link href='/' className='hover:text-mainColor transition-all'><FontAwesomeIcon icon={faHome} /> {localActive == 'en'? "Home":"الرئيسية"}</Link>
                         <span className='sec-path'>{path}</span>
                     </div>

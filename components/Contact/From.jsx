@@ -193,7 +193,7 @@ const ContactForm = () => {
 
                         <motion.div className="my-btn mt-8" variants={bottomVariants}>
                             <button
-                                className="btn btn-contact uppercase font-bold rounded-full transition duration-300 transform hover:scale-105 text-[20px]"
+                                className="btn2 btn-contact uppercase font-bold rounded-full transition duration-300 transform hover:scale-105 text-[20px]"
                                 type="submit"
                                 name="submit"
                             >

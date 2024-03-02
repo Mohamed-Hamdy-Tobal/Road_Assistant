@@ -8,11 +8,10 @@ import { useLocale } from "next-intl";
 
 
 const socialLinks = [
-    { link: 'https://www.facebook.com/profile.php?id=61555183182719&mibextid=PlNXYD', icon: faFacebook },
-    { link: 'https://www.instagram.com/_kassel_?igsh=cTY1dmtxd29nODF3&utm_source=qr', icon: faInstagram },
-    { link: 'https://pin.it/6CI41cw0A', icon: faPinterest },
-    { link: 'https://x.com/kasselsoft/status/1751659476862537793?s=20', icon: faTwitter },
-    { link: 'https://wa.me/message/74Q6F22FDGNYN1', icon: faWhatsapp },
+    { link: '/', icon: faFacebook },
+    { link: '/', icon: faInstagram },
+    { link: '/', icon: faTwitter },
+    { link: '/', icon: faWhatsapp },
 ];
 
 const Information = () => {
@@ -39,7 +38,7 @@ const Information = () => {
                         <h4 className="font-bold text-[20px] mb-2">
                             {localActive == 'en'?"Location":"الموقع"}
                         </h4>
-                        <p className="text-secondary mb-0 text-[#666]">V Business Center Vbc <br />Amman <br />Jordan</p>
+                        <p className="text-secondary mb-0 text-[#666]">{localActive == 'en'?'Damietta':'دمياط'}</p>
                     </div>
                 </li>
                 <li className={`contact-email gap-5 md:text-center lg:text-left flex-row flex md:flex-col lg:flex-row justify-start items-center ${localActive == 'ar'? "flex-row-reverse":""} lg:flex-row`}>
@@ -51,7 +50,7 @@ const Information = () => {
                             {localActive == 'en'?"Email":"الايميل"}
                         </h4>
                         <p className="mb-0 text-[#666] flex flex-col justify-start items-start">
-                            <a className="text-secondary2 hover:primary" href="mailto:kasselsoft@kasselsoft.com">kasselsoft@kasselsoft.com</a>
+                            <a className="text-secondary2 hover:primary" href="mailto:roadassistant@gamil.com">roadassistant@gamil.com</a>
                         </p>
                     </div>
                 </li>
@@ -64,8 +63,8 @@ const Information = () => {
                             {localActive == 'en'?"Phone":"الهاتف"}
                         </h4>
                         <div className="mb-0 text-[#666] flex flex-col">
-                            <span className="text-secondary2 hover:primary">+962 790039555</span>
-                            <span className="text-secondary2 hover:primary">+962 790025554</span>
+                            <span className="text-secondary2 hover:primary">+20 1012345678</span>
+                            <span className="text-secondary2 hover:primary">+20 1012345678</span>
                         </div>
                     </div>
                 </li>
@@ -74,7 +73,7 @@ const Information = () => {
                 {socialLinks.map((socialLink, index) => (
                     <li key={index} className=''>
                         <a href={socialLink.link} target="_blank" rel="noopener noreferrer">
-                            <span className='w-[50px] flex justify-center items-center h-[50px] rounded-full bg-mainColor hover:bg-[#1e4486] transition-all duration-300 text-white text-[20px]'><FontAwesomeIcon icon={socialLink.icon} /> </span>
+                            <span className='w-[50px] flex justify-center items-center h-[50px] rounded-full bg-mainColor hover:bg-[#41862fd6] transition-all duration-300 text-white text-[20px]'><FontAwesomeIcon icon={socialLink.icon} /> </span>
                         </a>
                     </li>
                 ))}

@@ -14,8 +14,9 @@ const LocalSwitcher = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const onSelectChange = (nextLocal: string) => {
-        router.replace(`/${nextLocal}`);
-        router.push(`/${nextLocal}/${currentLocalePath}`)
+        // router.replace(`/${nextLocal}`);
+        // router.push(`/${nextLocal}/${currentLocalePath}`)
+        currentLocalePath ? router.push(`/${nextLocal}/${currentLocalePath}`) : router.replace(`/${nextLocal}`);
         setIsOpen(false);
     };
 

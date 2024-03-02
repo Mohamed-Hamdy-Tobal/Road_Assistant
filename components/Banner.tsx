@@ -13,12 +13,12 @@ interface BannerProps {
 
 const Banner = ({ bannerTitle, path, bref }: BannerProps) => {
     const shapes = [
-        { src: "/icon-1.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block s-shape", style: { top: '50%',left: '14%'} },
-        { src: "/icon-2.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block s-shape animate-moveRight", style: {  top: '145px',left: '35%' } },
-        { src: "/icon-3.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block", style: { bottom: '60px',right: '35%'  } },
-        { src: "/icon-4.png", classes: "d-none  w-[50px] h-auto opacity-[58%] absolute lg:inline-block animate-moveTop", style: { bottom: '140px',right: '7%' } },
-        { src: "/icon-5.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block animate-moveRight", style: {top: '58%',right: '18%'} },
-        { src: "/icon-6.png", classes: "d-none w-[50px] h-auto opacity-[58%] absolute lg:inline-block s-shape", style: { top: '130px',right: '8%' } },
+        { src: "/icon-1.png", classes: "w-[50px] h-auto opacity-[58%] absolute lg:inline-block s-shape", style: { top: '50%',left: '14%'} },
+        { src: "/icon-2.png", classes: "hidden w-[50px] h-auto opacity-[58%] absolute lg:inline-block s-shape animate-moveRight", style: {  top: '145px',left: '35%' } },
+        { src: "/icon-3.png", classes: "w-[50px] h-auto opacity-[58%] absolute lg:inline-block", style: { bottom: '60px',right: '35%'  } },
+        { src: "/icon-4.png", classes: "w-[50px] h-auto opacity-[58%] absolute lg:inline-block animate-moveTop", style: { bottom: '140px',right: '7%' } },
+        { src: "/icon-5.png", classes: "hidden w-[50px] h-auto opacity-[58%] absolute lg:inline-block animate-moveRight", style: {top: '58%',right: '18%'} },
+        { src: "/icon-6.png", classes: "w-[50px] h-auto opacity-[58%] absolute lg:inline-block s-shape", style: { top: '130px',right: '8%' } },
     ];
 
     const localActive = useLocale()

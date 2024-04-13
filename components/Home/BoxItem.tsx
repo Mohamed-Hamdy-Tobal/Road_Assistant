@@ -6,7 +6,7 @@ const BoxItem = ({ img, title, desc }: { img: any, title: string, desc: string }
         <div className="feature h-full text-[#222] ele-center-col text-center md:min-h-[305px] lg:min-h-[325px] ">
             <div className="home3-single-intro-content w-full relative overflow-hidden bg-white h-full ele-center-col p-8 rounded-lg shadow-md transition-transform transform duration-300">
                 <div className="mb-[10px] flex-1 flex justify-center items-center">
-                    <span className='text-[55px] text-mainColor'>
+                    <span className='text-[55px] text-mainColor z-[1]'>
                         <FontAwesomeIcon icon={img} />
                     </span>
                 </div>

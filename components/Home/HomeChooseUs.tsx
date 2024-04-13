@@ -24,20 +24,20 @@ const textVariants = {
 }
 
 const introEN = {
-    title: 'WHY CHOOSE US',
-    mainTitle:"We help you to make work easy",
-    desc: 'At Kassel Company, we understand what your business means to you. Our commitment is to simplify your work, delivering innovative solutions that enhance efficiency and allow you to concentrate effortlessly on your core objectives.',
-    btn:'View More'
-}
+    title: 'Your Trusted Roadside Assistance Partner',
+    mainTitle: "We're Here to Get You Back on the Road",
+    desc: "When you experience car trouble on the road, don't worry – we're here to help. Our comprehensive roadside assistance services are available 24/7, 365 days a year, providing you with peace of mind wherever your journey takes you.",
+    btn: 'Get a Quote'
+};
 const introAR = {
-    title: 'لماذا نختارنا',
-    mainTitle: 'نساعدك في تسهيل العمل',
-    desc: 'في شركة كاسل، نفهم ما تعنيه أعمالك بالنسبة لك. التزامنا هو تبسيط عملك، وتقديم حلول مبتكرة تعزز الكفاءة وتتيح لك التركيز بسهولة على أهدافك الأساسية.',
-    btn: 'عرض المزيد'
+    title: 'شريكك الموثوق في المساعدة على جانب الطريق',
+    mainTitle: 'نحن هنا لإعادتك إلى الطريق',
+    desc: 'عندما تواجه مشكلة في سيارتك على الطريق، لا داعي للقلق - نحن هنا للمساعدة. تتوفر خدمات المساعدة على جانب الطريق الشاملة لدينا على مدار 24 ساعة في اليوم، 365 يومًا في السنة، مما يمنحك راحة البال أينما تأخذك رحلتك.',
+    btn: 'احصل على عرض أسعار'
 };
 
 
-const HomeAbout = () => {
+const HomeChooseUs = () => {
     const localActive = useLocale();
     const intro = localActive == 'en'? introEN:introAR
 
@@ -68,4 +68,4 @@ const HomeAbout = () => {
     );
 }
 
-export default HomeAbout;
+export default HomeChooseUs;

@@ -190,7 +190,7 @@ header .main-link-header:hover .span-head {
 }
 
 .theme-color {
-    color: #365486;
+    color: #224C17;
 }
 
 /* For Menu */
@@ -357,4 +357,50 @@ header .main-link-header:hover .span-head {
 }
 .full-banner .path a:hover {
     color: #E68C3A;
+}
+
+
+
+/* Features */
+.home3-single-intro-content::before,
+.home3-single-intro-content::after {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    transition: .6s;
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    -ms-transition: .6s;
+    -o-transition: .6s;
+}
+
+.home3-single-intro-content::before {
+    background-color: rgb(245, 253, 252);
+    left: -100px;
+    top: -180px;
+    width: 292px;
+    height: 292px;
+}
+
+.home3-single-intro-content::after {
+    background-color: #224C17;
+    right: -18px;
+    bottom: -80px;
+    width: 118px;
+    height: 118px;
+}
+
+.home3-single-intro-content:hover.home3-single-intro-content::before {
+    left: -160px;
+    top: -220px;
+}
+
+.home3-single-intro-content:hover.home3-single-intro-content::after {
+    right: -60px;
+    bottom: -85px;
+}
+
+.flip-right {
+    flex-direction: row-reverse !important;
+    text-align: right !important;
 }

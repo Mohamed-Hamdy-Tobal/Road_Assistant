@@ -61,20 +61,16 @@ const ParallaxComponent: React.FC = () => {
             onMouseMove={handleMouseMove}
             className="relative"
             id="container-img"
-            initial='initial' 
+            initial='initial'
             whileInView='animate'
         >
             <motion.div className="mytarget flex justify-center items-center " variants={LeftRight}>
-                <div className={` mt-[90px] max-w-[77%] md:max-w-[78%] 2xl:max-w-full lg:mt-4 mb-24 flex justify-center lg:justify-end ml-0 mr-0 ${localActive == 'en'? 'lg:ml-40':"lg:mr-40"}  relative`}>
-                    <div className="max-w-[80%] md:max-w-full relative inline-flex justify-end items-end bg-transparent" >
-                        <Image width={500} height={400} className="z-10 max-w-full h-auto" src="/about-us-img1.jpg" alt="image" />
+                <div className={` mt-[90px] max-w-[77%] md:max-w-[78%] 2xl:max-w-full lg:mt-4 mb-24 flex justify-center lg:justify-end ml-0 mr-0 ${localActive == 'en' ? 'lg:ml-40' : "lg:mr-40"}  relative`}>
+                    {/* <div className="max-w-[80%] md:max-w-full relative inline-flex justify-end items-end bg-transparent" >
                         <Image width={500} height={400} className="max-w-[60%] md:max-w-[80%] absolute z-[25] h-auto top-[56%] right-[56%] xl:top-[180px] xl:right-[210px]" src="/about-us-img2.jpg" alt="image" />
-                        <div className="about-us-marker right-[-72px] md:right-[-100px] w-fit h-auto text-[16px] py-[25px] px-[35px] lg:text-[20px] absolute z-20 text-center bg-white p-4">
-                            <span className='text-[30px] md:text-[50px] py-5 text-yellow-500'><FontAwesomeIcon icon={faStar} /></span>
-                        </div>
-                        <div className="about-us-about-icon w-[70px] h-[70px] md:w-[112px] md:h-[112px] ele-center absolute z-20 bg-customColor p-5 text-white" data-aos="zoom-in" data-aos-duration="2000">
-                            <span className='text-[30px] md:text-[50px] py-5'><FontAwesomeIcon icon={faRocket} /></span>
-                        </div>
+                    </div> */}
+                    <div className="max-w-[80%] md:max-w-full relative inline-flex justify-end items-end bg-transparent" >
+                        <Image width={500} height={400} className="z-10 max-w-full h-auto" src="/helpo.png" alt="image" />
                     </div>
                 </div>
             </motion.div>

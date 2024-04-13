@@ -5,7 +5,7 @@ import Head from "next/head";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-// import Footer from "@/components/Footer";
+import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -52,7 +52,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <Header/>
         {children}
-        {/* <Footer/> */}
+        <Footer/>
         <ScrollToTopButton />
         <ToastContainer/>
       </body>

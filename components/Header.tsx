@@ -19,17 +19,17 @@ const Header = () => {
 
     const NavLinksEN = [
         { href: `/${localActive}`, key: 'Home', text: 'Home' },
-        { href: `/${localActive}/about`, key: 'About', text: 'About' },
         { href: `/${localActive}/services`, key: 'Services', text: 'Services' },
         { href: `/${localActive}/blogs`, key: 'Blog', text: 'Blog' },
+        { href: `/${localActive}/faq`, key: "FAQ's", text: "FAQ's" },
         // { href: `/${localActive}/career`, key: 'Career', text: 'Career' },
         { href: `/${localActive}/contact`, key: 'Contact', text: 'Contact' },
     ];
     const NavLinksAR = [
         { href: `/${localActive}`, key: 'الرئيسية', text: 'الرئيسية' },
-        { href: `/${localActive}/about`, key: 'حول', text: 'حول' },
         { href: `/${localActive}/services`, key: 'الخدمات', text: 'الخدمات' },
         { href: `/${localActive}/blog`, key: 'المدونة', text: 'المدونة' },
+        { href: `/${localActive}/faq`, key: 'الاسألة الشائعة', text: 'الاسألة الشائعة' },
         // { href: `/${localActive}/career`, key: 'الوظائف', text: 'الوظائف' },
         { href: `/${localActive}/contact`, key: 'اتصل بنا', text: 'اتصل بنا' },
     ];
@@ -96,7 +96,7 @@ const Header = () => {
                         className="block md:hidden focus:outline-none my-btn-header"
                         onClick={handleMenuToggle}
                     >
-                        <span className={` mobile-menubar text-secoColor text-[25px] transition-all duration-500 ${!isHeaderOpen ? '' : 'close-icon'}`}><FontAwesomeIcon icon={faBars} /></span>
+                        <span className={` mobile-menubar text-white text-[25px] transition-all duration-500 ${!isHeaderOpen ? '' : 'close-icon'}`}><FontAwesomeIcon icon={faBars} /></span>
                         {/* <span className={`z-20 mobile-menubar theme-color text-[22px] transition-all duration-500`}><FontAwesomeIcon icon={faBars} /></span> */}
                     </button>
                     <div className="switcher1 block lg:hidden">

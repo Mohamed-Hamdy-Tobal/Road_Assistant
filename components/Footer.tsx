@@ -22,7 +22,7 @@ const Footer = () => {
                                 <>
                                     <div className="col-span-4 lg:col-span-2 pr-[110px]">
                                         {/* <img src='kassel_logo3.png' alt='logo' className='max-w-full w-[180px] h-auto mb-5' /> */}
-                                        <h1 className="text-white text-[40px] font-bold ite uppercase relative mb-[25px] w-fit"  >{localActive == 'en' ? 'Kassel' : 'كاسل'}<span className="block w-[50px]  translate-x-[-50%] left-[50%] h-[4px] bg-mainColor absolute bottom-[-1px] translate-y-[6px] rounded-[3px]"></span></h1>
+                                        <h1 className="text-white text-[40px] font-bold ite uppercase relative mb-[25px] w-fit"  >{localActive == 'en' ? 'Road Assistant' : 'مساعد الطريق'}<span className="block w-[50px]  translate-x-[-50%] left-[50%] h-[4px] bg-secoColor absolute bottom-[-1px] translate-y-[6px] rounded-[3px]"></span></h1>
                                         <p className='desc text-[18px] leading-[28px] font-400 text-[#cbcbcb] mb-4'>
                                             {localActive == 'en'
                                                 ? 'Rapid and maintainable product development Bring your startup idea to life, or solve a business problem.'
@@ -44,7 +44,7 @@ const Footer = () => {
                                             <ul className="footer-info">
                                                 {section.links.map((link, linkIndex) => (
                                                     <li key={linkIndex} className='text-[#cbcbcb] mb-3 text-[18px] leading-[1.5]'>
-                                                        <Link href={`/${localActive}/${link.href}`} passHref className="relative inline-block mb-2 hover:text-mainColor transition-all duration-300">
+                                                        <Link href={`/${localActive}/${link.href}`} passHref className="relative inline-block mb-2 hover:text-secoColor transition-all duration-300">
                                                             {link.text}
                                                         </Link>
                                                     </li>
@@ -61,7 +61,7 @@ const Footer = () => {
                                                     <span className="f-icon mr-2">
                                                         <FontAwesomeIcon icon={faGlobe} />
                                                     </span>
-                                                    <span className="whitespace-wrap"><a href='www.kasselsoft.com' target='__blank'>www.kasselsoft.com</a></span>
+                                                    <span className="whitespace-wrap"><a href='www.example.com' target='__blank'>www.example.com</a></span>
                                                 </li>
 
                                                 {/* Mail */}
@@ -69,7 +69,7 @@ const Footer = () => {
                                                     <span className="f-icon mr-2">
                                                         <FontAwesomeIcon icon={faEnvelope} />
                                                     </span>
-                                                    <span className="whitespace-wrap"><a href='mailto:kasselsoft@kasselsoft.com'>kasselsoft@kasselsoft.com</a></span>
+                                                    <span className="whitespace-wrap"><a href='mailto:example@example.com'>example@example.com</a></span>
                                                 </li>
 
                                                 {/* Location Marker */}
@@ -78,20 +78,11 @@ const Footer = () => {
                                                         <FontAwesomeIcon icon={faMapMarkerAlt} />
                                                     </span>
                                                     <span className="whitespace-wrap">
-                                                        <a href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13534.790227467456!2d35.8850835!3d31.9962133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca13d1331d42f%3A0xe04c250b2e016ae0!2skasselsoft!5e0!3m2!1sar!2seg!4v1706995306619!5m2!1sar!2seg" target='__blank'>V Business Center</a>
+                                                        <a href="#" target='__blank'>Dumyat</a>
                                                     </span>
                                                 </li>
                                             </ul>
-                                            <ul className="social">
-                                                {/* <li className='text-[#cbcbcb] mb-3 text-[18px] leading-[1.5] flex items-start'>
-                                            <span className="f-icon mr-2">
-                                                <FontAwesomeIcon icon={faMapMarker} />
-                                            </span>
-                                            <span className="whitespace-wrap">
-                                                {localActive == 'en' ? 'Address: Queen Rania Street, Amman - Jordan' : 'العنوان: شارع الملكة رانيا العبدالله، عمان - الأردن'}
-                                            </span>
-                                        </li> */}
-
+                                            {/* <ul className="social">
                                                 <li className='text-[#cbcbcb] mb-3 text-[18px] leading-[1.5] flex items-start'>
                                                     <span className="f-icon mr-2">
                                                         <FontAwesomeIcon icon={faCalendar} />
@@ -127,7 +118,7 @@ const Footer = () => {
                                                         {localActive == 'en' ? 'Sales Direct: +962 790039555' : 'المبيعات المباشرة: +962 790039555'}
                                                     </span>
                                                 </li>
-                                            </ul>
+                                            </ul> */}
                                         </div>
                                     </div>
                                 </>
@@ -139,7 +130,7 @@ const Footer = () => {
                                             <ul className="footer-info">
                                                 {section.links.map((link, linkIndex) => (
                                                     <li key={linkIndex} className='text-[#cbcbcb] mb-3 text-[18px] leading-[1.5]'>
-                                                        <Link href={`/${localActive}/${link.href}`} passHref className="relative inline-block mb-2 hover:text-mainColor transition-all duration-300">
+                                                        <Link href={`/${localActive}/${link.href}`} passHref className="relative inline-block mb-2 hover:text-secoColor transition-all duration-300">
                                                             {link.text}
                                                         </Link>
                                                     </li>
@@ -149,7 +140,7 @@ const Footer = () => {
                                     ))}
                                     <div className={`up-footer col-span-4 lg:col-span-2 p-0 lg:pl-[110px] text-right flex items-end flex-col`}>
                                         {/* <img src='kassel_logo3.png' alt='logo' className='max-w-full w-[180px] h-auto mb-5' /> */}
-                                        <h1 className="text-white text-[40px] font-bold ite uppercase relative mb-[25px] w-fit"  >{localActive == 'en' ? 'Kassel' : 'كاسل'}<span className="block w-[50px]  translate-x-[-50%] left-[50%] h-[4px] bg-mainColor absolute bottom-[-1px] translate-y-[6px] rounded-[3px]"></span></h1>
+                                        <h1 className="text-white text-[40px] font-bold ite uppercase relative mb-[25px] w-fit"  >{localActive == 'en' ? 'Road Assistant' : 'مساعد الطريق'}<span className="block w-[50px]  translate-x-[-50%] left-[50%] h-[4px] bg-secoColor absolute bottom-[-1px] translate-y-[6px] rounded-[3px]"></span></h1>
                                         <p className='desc text-[18px] leading-[28px] font-400 text-[#cbcbcb] mb-4'>
                                             {localActive == 'en'
                                                 ? 'Rapid and maintainable product development Bring your startup idea to life, or solve a business problem.'
@@ -174,7 +165,7 @@ const Footer = () => {
                                                     <span className="f-icon mr-2">
                                                         <FontAwesomeIcon icon={faGlobe} />
                                                     </span>
-                                                    <span className="whitespace-wrap"><a href='www.kasselsoft.com' target='__blank'>www.kasselsoft.com</a></span>
+                                                    <span className="whitespace-wrap"><a href='www.example.com' target='__blank'>www.example.com</a></span>
                                                 </li>
 
                                                 {/* Mail */}
@@ -182,7 +173,7 @@ const Footer = () => {
                                                     <span className="f-icon mr-2">
                                                         <FontAwesomeIcon icon={faEnvelope} />
                                                     </span>
-                                                    <span className="whitespace-wrap"><a href='mailto:kasselsoft@kasselsoft.com'>kasselsoft@kasselsoft.com</a></span>
+                                                    <span className="whitespace-wrap"><a href='mailto:example@example.com'>example@example.com</a></span>
                                                 </li>
 
                                                 {/* Location Marker */}
@@ -191,45 +182,7 @@ const Footer = () => {
                                                         <FontAwesomeIcon icon={faMapMarkerAlt} />
                                                     </span>
                                                     <span className="whitespace-wrap">
-                                                        <a href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13534.790227467456!2d35.8850835!3d31.9962133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca13d1331d42f%3A0xe04c250b2e016ae0!2skasselsoft!5e0!3m2!1sar!2seg!4v1706995306619!5m2!1sar!2seg" target='__blank'>V Business Center</a>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                            <ul className="social  text-right">
-                                                <li className='text-[#cbcbcb] mb-3 text-[18px] leading-[1.5] flex items-end gap-2 flex-row-reverse'>
-                                                    <span className="f-icon mr-2">
-                                                        <FontAwesomeIcon icon={faCalendar} />
-                                                    </span>
-                                                    <span className="whitespace-wrap">
-                                                        {localActive == 'en' ? 'Sunday - Thursday ' : 'الأحد - الخميس'}
-                                                    </span>
-                                                </li>
-
-                                                <li className='text-[#cbcbcb] mb-3 text-[18px] leading-[1.5] flex items-end gap-2 flex-row-reverse'>
-                                                    <span className="f-icon mr-2">
-                                                        <FontAwesomeIcon icon={faClock} />
-                                                    </span>
-                                                    <span className="whitespace-wrap">
-                                                        {localActive == 'en' ? (
-                                                            <>
-                                                                <span>9 AM - </span>
-                                                                <span>5 PM </span>
-                                                            </>
-                                                        ) : (
-                                                            <div className='flex gap-2'>
-                                                                <div><span> مساءً </span><span> 5 </span></div><span> - </span>
-                                                                <div><span> صباحا </span><span> 9 </span></div>
-                                                                {/* <span> 9 صباحا </span> */}
-                                                            </div>
-                                                        )}
-                                                    </span>
-                                                </li>
-                                                <li className='text-[#cbcbcb] mb-3 text-[18px] leading-[1.5] flex items-end gap-2 flex-row-reverse'>
-                                                    <span className="f-icon mr-2">
-                                                        <FontAwesomeIcon icon={faMoneyBill} />
-                                                    </span>
-                                                    <span className="whitespace-wrap">
-                                                        {localActive == 'en' ? 'Sales Direct: +962 790039555' : 'المبيعات المباشرة: +962 790039555'}
+                                                        <a href="#" target='__blank'>Dumyat</a>
                                                     </span>
                                                 </li>
                                             </ul>
@@ -244,31 +197,31 @@ const Footer = () => {
                             <h3 className="font-bold inline-block text-[25px] mb-0">{localActive == 'en' ? 'Follow Us' : "تابعنا"}</h3>
                             <ul className="social flex gap-[10px]">
                                 {/* Phone */}
-                                <li className='text-mainColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
+                                <li className='text-secoColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
                                     <span className="f-icon mr-2">
-                                        <Link href='https://web.whatsapp.com/send?autoload=1&app_absent=0&phone=962790039555&text' target='_blank'><FontAwesomeIcon icon={faWhatsapp} /></Link>
+                                        <Link href='/' target='_blank'><FontAwesomeIcon icon={faWhatsapp} /></Link>
                                     </span>
                                 </li>
 
                                 {/* Mail */}
-                                <li className='text-mainColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
+                                <li className='text-secoColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
                                     <span className="f-icon mr-2">
-                                        <Link href='https://www.instagram.com/_kassel_?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr' target='_blank'><FontAwesomeIcon icon={faInstagram} /></Link>
+                                        <Link href='/' target='_blank'><FontAwesomeIcon icon={faInstagram} /></Link>
                                     </span>
                                 </li>
-                                <li className='text-mainColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
+                                <li className='text-secoColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
                                     <span className="f-icon mr-2">
-                                        <Link href='https://www.facebook.com/profile.php?id=61555183182719&mibextid=PlNXYD' target='_blank'><FontAwesomeIcon icon={faFacebook} /></Link>
+                                        <Link href='/' target='_blank'><FontAwesomeIcon icon={faFacebook} /></Link>
                                     </span>
                                 </li>
-                                <li className='text-mainColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
+                                <li className='text-secoColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
                                     <span className="f-icon mr-2">
-                                        <Link href='https://pin.it/6CI41cw0A' target='_blank'><FontAwesomeIcon icon={faPinterest} /></Link>
+                                        <Link href='/' target='_blank'><FontAwesomeIcon icon={faPinterest} /></Link>
                                     </span>
                                 </li>
-                                <li className='text-mainColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
+                                <li className='text-secoColor text-[25px] flex items-start hover:text-[#979696] transition-all duration-300'>
                                     <span className="f-icon mr-2">
-                                        <Link href='https://x.com/kasselsoft/status/1751659476862537793?s=20' target='_blank'><FontAwesomeIcon icon={faTwitter} /></Link>
+                                        <Link href='/' target='_blank'><FontAwesomeIcon icon={faTwitter} /></Link>
                                     </span>
                                 </li>
                             </ul>

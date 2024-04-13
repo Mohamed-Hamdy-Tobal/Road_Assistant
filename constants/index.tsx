@@ -1,3 +1,10 @@
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faCar } from '@fortawesome/free-solid-svg-icons';
+import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faTruck, faTools, faCarBattery, faGasPump } from '@fortawesome/free-solid-svg-icons';
+
+
+
 export const NavLinksEN = [
     { href: '/', key: 'Home', text: 'Home' },
     { href: 'about', key: 'About', text: 'About' },
@@ -36,8 +43,8 @@ export const footerLinksEN:footer = [
                 text: 'Home',
             },
             {
-                href: 'about',
-                text: 'About',
+                href: 'faq',
+                text: "FAQ's",
             },
             {
                 href: 'services',
@@ -101,113 +108,87 @@ export const footerLinksAR:footer = [
 ];
 
 
-export const ENbubbles = [
+export const ENbubbles: {
+    title: string;
+    img: any;
+    desc: string;
+}[] = [
     {
-        title: 'Websites Design & Development',
-        img: 'bubble1.svg',
-        desc: 'Kassel stands as a leading force in web development, offering comprehensive solutions tailored to client needs. '
+        title: 'Innovative Roadside Assistance',
+        img: faTriangleExclamation,
+        desc: "The ultimate roadside assistance experience - Road Assistant's got you covered"
     },
     {
-        title: 'Apps Design & Development',
-        img: 'bubble2.svg',
-        desc: 'Kassel is at the forefront of app development, providing tailored solutions that elevate user experiences. '
+        title: 'Motor Insurance Inspections',
+        img: faCar,
+        desc: 'Innovative car inspections through AI technology'
     },
     {
-        title: 'Digital Marketing',
-        img: 'bubble3.svg',
-        desc: 'Kassel distinguishes itself in the realm of digital marketing by offering comprehensive strategies that drive business growth.'
-    },
-    {
-        title: 'SAP',
-        img: 'bubble4.svg',
-        desc: 'Kassel Company stands as a reliable and innovative provider of SAP services, offering a comprehensive suite of solutions tailored to meet the diverse needs of businesses. '
-    },
-    {
-        title: 'ORACLE',
-        img: 'bubble5.svg',
-        desc: 'Kassel Company is a trusted provider of Oracle services. '
-    },
-    {
-        title: 'Odoo',
-        img: 'bubble6.svg',
-        desc: 'Kassel Company is a distinguished provider of Odoo services.'
+        title: 'Full Claim Cooperation',
+        img: faMapLocationDot,
+        desc: "Efficient inspection coordination From request to inspection, we've got you covered Simplify your inspection process today"
     },
 ];
 export const ARbubbles = [
     {
-        title: 'تصميم وتطوير المواقع',
-        img: 'bubble1.svg',
-        desc: 'تقف كاسل كقوة رائدة في تطوير الويب، حيث تقدم حلولاً شاملة مصممة خصيصًا لتلبية احتياجات العملاء.'
+        title: "المساعدة على الطريق المبتكرة",
+        img: faTriangleExclamation,
+        desc: "تجربة المساعدة على الطريق المثالية - Road Assistant's توفر لك كل ما تحتاجه"
     },
     {
-        title: 'تصميم وتطوير التطبيقات',
-        img: 'bubble2.svg',
-        desc: 'تعتبر شركة كاسل في طليعة شركات تطوير التطبيقات، حيث تقدم حلولاً مخصصة تعمل على الارتقاء بتجارب المستخدم.'
+        title: "فحص التأمين على السيارات",
+        img: faCar,
+        desc: "فحص مبتكر للسيارات من خلال تقنية الذكاء الاصطناعي"
     },
     {
-        title: 'التسويق الرقمي',
-        img: 'bubble3.svg',
-        desc: 'تميز كاسل نفسها في مجال التسويق الرقمي من خلال تقديم استراتيجيات شاملة تدفع نمو الأعمال.'
-    },
-    {
-        title: 'اس بي ا',
-        img: 'bubble4.svg',
-        desc: 'تقف شركة كاسل كمزود موثوق ومبتكر لخدمات SAP، حيث تقدم مجموعة شاملة من الحلول المصممة لتلبية الاحتياجات المتنوعة للشركات.'
-    },
-    {
-        title: 'اوراكل',
-        img: 'bubble5.svg',
-        desc: 'تعتبر شركة كاسل مزودًا موثوقًا لخدمات اوراكل .'
-    },
-    {
-        title: 'اودوو',
-        img: 'bubble6.svg',
-        desc: 'شركة كاسل هي شركة متميزة في تقديم خدمات اودوو.'
+        title: "التعاون الكامل للمطالبة",
+        img: faMapLocationDot ,
+        desc: "تنسيق فحص فعال، بدءًا من الطلب وحتى الفحص، نوفر لك كل ما تحتاجه. قم بتبسيط عملية الفحص الخاصة بك اليوم"
     },
 ];
 
 export const HomeAboutEN = [
     {
-        title: 'app developments',
-        img: 'user1.png',
-        desc: 'complete solution for crafting innovative and tailored applications'
+        title: 'TOW TRUCKS',
+        img: faTruck,
+        desc: 'When the vehicle cannot be safely on the road after attending any of the emergency procedures provided, or in an accident situation a tow truck will be sent to vehicle location for assistance.'
     },
     {
-        title: 'Web Development',
-        img: 'code.png',
-        desc: 'Crafting innovative web solutions for business growth'
+        title: 'TIRE CHANGE',
+        img: faTools,
+        desc: 'In case of a flat tire and availability of usable spare tire in the vehicle, our providers will change the tires on the spot.'
     },
     {
-        title: 'Content Mangement',
-        img: 'code2.png',
-        desc: 'Streamlined app content management for businesses'
+        title: 'BATTERY JUMP START',
+        img: faCarBattery,
+        desc: 'If the battery on the vehicle is dead for whatever reason, our providers will assist in jump-starting the vehicle so you can carry on with your journey.'
     },
     {
-        title: 'Mobility',
-        img: 'bar2.png',
-        desc: 'Elevating businesses through cutting-edge mobility solutions'
+        title: 'FUEL DELIVERY',
+        img: faGasPump,
+        desc: "An emergency towing service will be delivered to user’s disabled vehicle helping the user reach the nearest gas station."
     }
 ];
 export const HomeAboutAR = [
     {
-        title: 'تطوير التطبيقات',
-        img: 'user1.png',
-        desc: 'حلا كاملاً لصياغة تطبيقات مبتكرة ومصممة حسب الطلب'
+        title: "ونش إنقاذ",
+        img: faTruck,
+        desc: ". طلب ونش إنقاذ فى حالة تعسر السيارة عن الحركة بسبب عطل أو فى حالة الحوادث"
     },
     {
-        title: 'تطوير الويب',
-        img: 'code.png',
-        desc: 'صياغة حلاً ويب مبتكرًا لنمو الأعمال'
+        title: "تغيير أو تصليح الإطارات",
+        img: faTools,
+        desc: ". فى حالة ثقب الإطارات مع عدم توافر إطار إضافى أو معدات لتغيير الإطارات يتم تقديم مساعدة من خلال أحد شركائنا لتغيير أو إصلاح الإطارات"
     },
     {
-        title: 'إدارة المحتوى',
-        img: 'code2.png',
-        desc: 'إدارة ميسرة لمحتوى التطبيق للشركات'
+        title: "شحن البطارية",
+        img: faCarBattery,
+        desc: ". فى حالة نفاذ شحن البطارية أو توقفها عن العمل يتم إرسال أحد شركاء ماى داى بالمعدات اللازمة لشحن البطارية فى نفس مكان حدوث العطل"
     },
     {
-        title: 'التنقل',
-        img: 'bar2.png',
-        desc: 'رفع مستوى الأعمال من خلال حلاول التنقل الحديثة'
+        title: 'توصيل الوقود',
+        img: faGasPump,
+        desc: ". فى حالة نفاذ الوقود يتم نقل السيارة لأقرب محطة وقود أو توصيل وقود لمكان السيارة فى حالة إمكانية لذلك"
     }
 ];
 

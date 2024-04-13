@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket, faHandshake, faHandsClapping, faMobileAndroidAlt, faDesktop, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faRocket, faHandshake, faHandsClapping, faMobileAndroidAlt, faGlobe, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { motion } from "framer-motion"
 import { bottomVariants } from '../animation';
 import ScrollTrigger from 'react-scroll-trigger';
@@ -11,14 +11,14 @@ import { useLocale } from "next-intl";
 
 
 const introEN = {
-    title: "Here’s why people choose to work with kassel",
-    mainTitle:"Career opportunities at Kassel",
-    desc: `Unleash the power of digitized solutions, including web, Android, and iOS apps, We treat you like a partner and build on your vision by showing you new possibilities and alternatives that suit you better.`,
+    title: "Here’s why people choose to work with us",
+    mainTitle:"Our mission",
+    desc: "Provide first-class roadside assistance services through our mobile application, using the latest technology and a dedicated team of professionals, to ensure drivers get the help they need anytime, anywhere."
 }
 const introAR = {
-    title: 'إليك لماذا يختار الناس العمل مع كاسل',
-    mainTitle: 'فرص العمل في كاسل',
-    desc: `أطلق قوة الحلول المرقمة، بما في ذلك تطبيقات الويب وأندرويد و ايفون . نعاملك كشريك ونبني على رؤيتك من خلال إظهار لك إمكانيات وبدائل جديدة تناسبك بشكل أفضل.`,
+    title: 'إليك لماذا يختار الناس العمل معنا ',
+    mainTitle: "مهمتنا",
+    desc: "توفير خدمات المساعدة على الطريق من الدرجة الأولى من خلال تطبيق الهاتف المحمول الخاص بنا ، باستخدام أحدث التقنيات وفريق متخصص من المحترفين ، لضمان حصول السائقين على المساعدة التي يحتاجون إليها في أي وقت وفي أي مكان"
 };
 
 
@@ -48,47 +48,48 @@ const ServiceItem = ({ icon, title, count, operation }) => {
 const servicesDataEN = [
     {
         icon: faRocket,
-        title: 'Leadership Years Experience',
-        count: 4,
-        operation: '+'
+        title: "Service Requests",
+        count: 20,
+        operation: 'K'
     },
     {
         icon: faHandshake,
-        title: 'Talented Squad',
+        title: 'Talented Team',
         count: 30,
         operation: '+'
     },
     {
         icon: faMobileAndroidAlt,
-        title: 'Apps Developed',
-        count: 20,
-        operation: '+'
+        title: "Customer Service Calls",
+        count: 150,
+        operation: 'K'
     },
     {
-        icon: faDesktop,
-        title: 'Projects Delivered',
-        count: 100,
-        operation: '%'
+        icon: faDownload,
+        title: "App Downloads",
+        count: 15,
+        operation: 'K'
     },
     {
         icon: faGlobe,
-        title: 'Countries Served',
+        title: 'Serviced Provinces',
         count: 7,
         operation: '+'
     },
     {
         icon: faHandsClapping,
-        title: 'Client Satisfaction',
+        title: 'Customer Satisfaction',
         count: 100,
         operation: '%'
     },
 ];
+
 const servicesDataAR = [
     {
         icon: faRocket,
-        title: 'سنوات القيادة',
-        count: 4,
-        operation: '+'
+        title: "طلب للخدمات",
+        count: 20,
+        operation: 'K'
     },
     {
         icon: faHandshake,
@@ -98,19 +99,19 @@ const servicesDataAR = [
     },
     {
         icon: faMobileAndroidAlt,
-        title: 'تطبيقات تم تطويرها',
-        count: 20,
-        operation: '+'
+        title: "مكالمة خدمة عملاء",
+        count: 150,
+        operation: 'K'
     },
     {
-        icon: faDesktop,
-        title: 'المشاريع التي تم تسليمها',
-        count: 100,
-        operation: '%'
+        icon: faDownload,
+        title: "تحميل للتطبيق",
+        count: 15,
+        operation: 'K'
     },
     {
         icon: faGlobe,
-        title: 'الدول التي تم خدمتها',
+        title: 'المحافطات التي تم خدمتها',
         count: 7,
         operation: '+'
     },
@@ -130,7 +131,7 @@ const WorkWith = () => {
     const servicesData = localActive == 'en'? servicesDataEN:servicesDataAR
 
     return (
-        <div className="pt-40 bg-cover py-[150px]" >
+        <div className="pt-40 bg-cover pb-[250px]" >
             <motion.div className="container mx-auto" variants={bottomVariants} initial='initial' whileInView='animate'>
                 <motion.div className="text-center" variants={bottomVariants} >
                     <motion.span className="text-mainColor text-[18px] font-bold" variants={bottomVariants}>{intro.title}</motion.span>

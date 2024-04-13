@@ -1,11 +1,14 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const BoxItem = ({ img, title, desc }: { img: string, title: string, desc: string }) => {
+const BoxItem = ({ img, title, desc }: { img: any, title: string, desc: string }) => {
     return (
         <div className="feature h-full text-[#222] ele-center-col text-center md:min-h-[305px] lg:min-h-[325px] ">
             <div className="home3-single-intro-content w-full relative overflow-hidden bg-white h-full ele-center-col p-8 rounded-lg shadow-md transition-transform transform duration-300">
                 <div className="mb-[10px] flex-1 flex justify-center items-center">
-                    <img src={img} alt="image" className="w-[60px] mx-auto mb-4 z-[1] relative" />
+                    <span className='text-[55px] text-mainColor'>
+                        <FontAwesomeIcon icon={img} />
+                    </span>
                 </div>
                 <div className="text-center flex-1">
                     <h5 className="font-bold mb-4">{title}</h5>

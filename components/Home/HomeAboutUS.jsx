@@ -46,7 +46,7 @@ const HomeAboutUS = () => {
                         <motion.div className="main-info w-full lg:w-[50%]" initial='initial' whileInView='animate'>
                             <div className="mb-16">
                                 <div className="space-y-4">
-                                    <span className="text-textMag font-bold">{dataAbout.title}</span>
+                                    <span className="text-secoColor font-bold">{dataAbout.title}</span>
                                     <h3 className="text-[38px] leading[1.25] font-bold mb-6 text-[#222222]">{dataAbout.mainABout}</h3>
                                     {dataAbout.info.map((item, idx) => (
                                         <div key={idx} className={`flex gap-3 ${localActive == 'ar'? "flex-row-reverse":""}`}>

@@ -29,7 +29,7 @@ const Header = () => {
         { href: `/${localActive}`, key: 'الرئيسية', text: 'الرئيسية' },
         { href: `/${localActive}/services`, key: 'الخدمات', text: 'الخدمات' },
         { href: `/${localActive}/blog`, key: 'المدونة', text: 'المدونة' },
-        { href: `/${localActive}/faq`, key: 'الاسألة الشائعة', text: 'الاسألة الشائعة' },
+        { href: `/${localActive}/faq`, key: 'الاسألة', text: 'الاسألة' },
         // { href: `/${localActive}/career`, key: 'الوظائف', text: 'الوظائف' },
         { href: `/${localActive}/contact`, key: 'اتصل بنا', text: 'اتصل بنا' },
     ];

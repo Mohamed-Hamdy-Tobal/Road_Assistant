@@ -404,3 +404,8 @@ header .main-link-header:hover .span-head {
     flex-direction: row-reverse !important;
     text-align: right !important;
 }
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root.Mui-disabled {
+    background: #0080004f !important;
+    border: 1px solid #00800000 !important;
+    color: #fff !important;
+}

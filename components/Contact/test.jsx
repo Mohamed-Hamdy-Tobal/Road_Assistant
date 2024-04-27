@@ -106,35 +106,25 @@ const ContactForm = () => {
             // If no errors, submit the form
             console.log('Data submitted', formData);
 
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                message: '',
-            });
-            toast.success(`Data Sent Successfully`, {position: 'bottom-left'})
+            try {
+                // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint
+                const response = await axios.post('https://wevr.tech/eslam.wevr.tech/public/api/contact/insert', formData);
+                // console.log('Server response:', response.data);
 
-            router.push('/')
+                // Optionally, reset the form
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                });
+                toast.success(`Data Sent Successfully`, {position: 'bottom-left'})
 
-            // try {
-            //     // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint
-            //     const response = await axios.post('https://wevr.tech/eslam.wevr.tech/public/api/contact/insert', formData);
-            //     // console.log('Server response:', response.data);
+                router.push('/')
 
-            //     // Optionally, reset the form
-            //     setFormData({
-            //         name: '',
-            //         email: '',
-            //         phone: '',
-            //         message: '',
-            //     });
-            //     toast.success(`Data Sent Successfully`, {position: 'bottom-left'})
-
-            //     router.push('/')
-
-            // } catch (error) {
-            //     console.error('Error submitting form:', error);
-            // }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+            }
         }
     }
 

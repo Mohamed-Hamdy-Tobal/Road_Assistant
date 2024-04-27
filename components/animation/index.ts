@@ -2,7 +2,7 @@
 export const bottomVariants = {
     initial: {
         x: 0,
-        y:120,
+        y:70,
         opacity: 0,
     },
     animate: {
@@ -17,7 +17,7 @@ export const bottomVariants = {
 }
 export const LeftRight = {
     initial: {
-        x: 120,
+        x: 130,
         y:0,
         opacity: 0,
     },

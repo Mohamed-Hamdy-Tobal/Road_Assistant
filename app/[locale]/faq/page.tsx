@@ -1,6 +1,7 @@
 'use client'
 
 import Banner from '@/components/Banner'
+import MainFAQ from '@/components/Faq/mainFAQ'
 import React from 'react'
 import { useLocale } from "next-intl";
 
@@ -12,11 +13,11 @@ const FAQ = () => {
             {
                 localActive == 'en'? (
                     <Banner bannerTitle={"FAQ'S"} path={"faq's"} bref={'Know more'} />
-                ):(<Banner bannerTitle={'معلومات عنا'} path={'حول'} bref={'تعرف أكثر'} />)
+                ):(<Banner bannerTitle={"الأسألة الشائعة"} path={'اسألة'} bref={'تعرف أكثر'} />)
             }
             <div className="main-FAQ py-[100px]">
                 <div className="container ">
-                    FAQ
+                    <MainFAQ/>
                 </div>
             </div>
         </div>

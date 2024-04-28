@@ -10,6 +10,26 @@
     --background-end-rgb: 255, 255, 255;
 }
 
+/* Define scrollbar styles */
+::-webkit-scrollbar {
+    width: 10px;
+    /* Width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #36ca62;
+    border-radius: 5px;
+    /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #209a44;
+    /* Color of the scrollbar handle on hover */
+}
+
+
 *,
 ::after,
 ::before {
@@ -59,14 +79,17 @@ body {
 header {
     padding: 50px 0;
 }
+
 @media (max-width: 768px) {
     header li a.activeLink {
-        color:#E68C3A;
+        color: #E68C3A;
     }
+
     header li:hover a {
-        color:#E68C3A;
+        color: #E68C3A;
     }
 }
+
 header .span-head {
     color: #fff;
     background: #E68C3A;
@@ -90,11 +113,13 @@ header .span-head {
     -ms-transition: .5s;
     -o-transition: .5s;
 }
+
 @media (min-width: 768px) {
     header .span-head {
         display: block
     }
 }
+
 @media (min-width: 768px) {
     header .span-head.activeLinkSpan {
         transform: translate(-50%, -50%) scale(1);
@@ -104,11 +129,13 @@ header .span-head {
         -o-transform: translate(-50%, -50%) scale(1);
     }
 }
+
 @media (max-width: 767px) {
     header li a.activeLink {
-        color:#E68C3A
+        color: #E68C3A
     }
 }
+
 header .main-link-header:hover .span-head {
     transform: translate(-50%, -50%) scale(1);
 }
@@ -231,6 +258,7 @@ header .main-link-header:hover .span-head {
         align-items: flex-start;
         gap: 35px;
     }
+
     .navs-menu.reflect {
         align-items: flex-end;
     }
@@ -253,22 +281,27 @@ header .main-link-header:hover .span-head {
     font-size: 22px;
     padding: 4px 12px;
 }
+
 .main-menu-mobile {
     order: 1
 }
+
 @media (min-width: 768px) {
     .reflect-landing {
         flex-direction: row-reverse !important;
         text-align: right;
     }
 }
+
 .reflect-dir {
     text-align: right;
 }
+
 .reflect-imgs {
     transform: rotateY(180deg);
     z-index: 1;
 }
+
 .close-toggle {
     width: 40px;
     height: 40px;
@@ -297,22 +330,26 @@ header .main-link-header:hover .span-head {
     top: 0;
     left: 0;
 }
+
 .full-banner .content-banner {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 .text-textMag {
     --tw-text-opacity: 1;
     color: rgb(60 102 171/var(--tw-text-opacity));
 }
+
 .full-banner .title {
     font-size: 60px;
     font-weight: 700;
     color: #222;
     margin-top: 10px;
 }
+
 .full-banner .path {
     color: #999;
     padding: 10px 28px;
@@ -321,6 +358,7 @@ header .main-link-header:hover .span-head {
     font-size: 18px;
     font-weight: 500;
 }
+
 .full-banner .path a {
     color: #999;
     transition: all .3s;
@@ -329,9 +367,11 @@ header .main-link-header:hover .span-head {
     -ms-transition: all .3s;
     -o-transition: all .3s;
 }
+
 .full-banner .path .sec-path {
     position: relative;
 }
+
 .full-banner .path .sec-path:before {
     position: absolute;
     content: "";
@@ -343,6 +383,7 @@ header .main-link-header:hover .span-head {
     background: #333;
     transform: rotate(22deg);
 }
+
 .full-banner:after {
     background-position: bottom;
     background-repeat: no-repeat;
@@ -353,8 +394,9 @@ header .main-link-header:hover .span-head {
     left: 0;
     position: absolute;
     width: 100%;
-   
+
 }
+
 .full-banner .path a:hover {
     color: #E68C3A;
 }
@@ -404,6 +446,7 @@ header .main-link-header:hover .span-head {
     flex-direction: row-reverse !important;
     text-align: right !important;
 }
+
 .css-1e6y48t-MuiButtonBase-root-MuiButton-root.Mui-disabled {
     background: #0080004f !important;
     border: 1px solid #00800000 !important;

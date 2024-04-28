@@ -42,7 +42,7 @@ const HomeChooseUs = () => {
     const intro = localActive == 'en'? introEN:introAR
 
     return (
-        <div className="about-area home3 relative overflow-hidden pt-14 mt-[50px]">
+        <div className="about-area home3 relative overflow-hidden md:pt-14 md:mt-[50px]">
             <div className="home3-about-bg pb-[170px] pt-[125px] bg-no-repeat pt-125 pb-170 bg-cover" style={{ backgroundImage: 'url("home3-about-bg.png")' }}>
                 <div className="container">
                     <div className={`flex flex-col pt-90 ${localActive=='ar'?'reflect-dir':''}`}>

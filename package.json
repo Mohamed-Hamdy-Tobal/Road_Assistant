@@ -17,6 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.17",
+    "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
     "@types/jsonwebtoken": "^9.0.5",
     "axios": "^1.6.7",

@@ -3,6 +3,8 @@
 import Banner from '@/components/Banner'
 import React from 'react'
 import { useLocale } from "next-intl";
+import ServiceAbout from '@/components/Services/ServiceAbout';
+import ServicesWork from '@/components/Services/Wrok';
 
 const Services = () => {
     const localActive = useLocale()
@@ -17,7 +19,8 @@ const Services = () => {
             }
             <div className="main-Services py-[100px]">
                 <div className="container ">
-                    Services
+                    <ServiceAbout/>
+                    <ServicesWork/>
                 </div>
             </div>
         </div>

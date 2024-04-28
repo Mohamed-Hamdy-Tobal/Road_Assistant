@@ -40,7 +40,7 @@ const HomeAboutUS = () => {
 
     return (
         <div className="about overflow-hidden">
-            <div className="about-main pb-14 pt-44">
+            <div className="about-main md:pb-14 pt-44">
                 <div className="container" >
                     <div className={`${localActive == 'ar' ? 'reflect-landing reflect-dir':''} flex flex-col lg:flex-row flex-wrap items-center justify-between`}>
                         <motion.div className="main-info w-full lg:w-[50%]" initial='initial' whileInView='animate'>

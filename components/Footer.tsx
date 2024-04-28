@@ -2,7 +2,7 @@ import { footerLinksAR, footerLinksEN } from '@/constants'
 import Link from 'next/link'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faEnvelope, faMapMarkerAlt, faMapMarker, faCalendar, faClock, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faPinterest, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { useLocale } from "next-intl";
 
@@ -26,7 +26,7 @@ const Footer = () => {
                                         <p className='desc text-[18px] leading-[28px] font-400 text-[#cbcbcb] mb-4'>
                                             {localActive == 'en'
                                                 ? 'Rapid and maintainable product development Bring your startup idea to life, or solve a business problem.'
-                                                : '.تطوير منتج سريع وقابل للصيانة، قم بإضفاء الحيوية على فكرة بدء التشغيل الخاصة بك، أو حل مشكلة العمل'}
+                                                : 'تطوير منتج سريع وقابل للصيانة، قم بإضفاء الحيوية على فكرة بدء التشغيل الخاصة بك، أو حل مشكلة العمل'}
                                         </p>
                                         <div className="relative mb-6">
                                             <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">

@@ -103,7 +103,7 @@ const Header = () => {
                         <LocalSwitcher />
                     </div>
                 </div>
-                <nav className={`${isHeaderOpen ? 'menu-show' : ''} flex gap-6 justify-center items-center menu-toggle transition-all duration-300`}>
+                <nav className={`${isHeaderOpen ? 'menu-show' : ''} ${localActive == 'ar' ? "flex-row-reverse" : ""} flex gap-6 justify-center items-center menu-toggle transition-all duration-300`}>
                     <div className="toggle-mobile flex justify-between items-center w-full pt-[30px]">
                         {/* <h1 className="block md:hidden text-[#ccc] text-[30px] md:text-[22px] font-bold ite uppercase self-baseline">{localActive == 'en' ? "RA" : "مساعد الطريق"} <span className="block w-1/2 mx-auto h-[3px] bg-secoColor absolute bottom-[3px] ml-[25%] translate-y-[6px] rounded-[3px]"></span></h1> */}
                         <Image src="/logo-white.svg" alt='logo' className="lock md:hidden" width={60} height={20} />
@@ -115,7 +115,7 @@ const Header = () => {
                             {/* <span className={`z-20 mobile-menubar theme-color text-[22px] transition-all duration-500`}><FontAwesomeIcon icon={faBars} /></span> */}
                         </button>
                     </div>
-                    <ul className={`navs-menu flex justify-between items-center md:gap-5 mt-[20px] md:mt-[0px] ${localActive == 'ar' ? "reflect" : ""}`}>
+                    <ul className={`navs-menu flex justify-between items-center md:gap-5 mt-[20px] md:mt-[0px] ${localActive == 'ar' ? "reflect flex-row-reverse" : ""}`}>
                         {NavLink.map((nav) => <li
                             key={nav.key}
                             className="md:min-w-[70px] text-center"

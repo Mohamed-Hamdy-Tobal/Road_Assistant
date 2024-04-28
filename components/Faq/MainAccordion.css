@@ -1,0 +1,31 @@
+.main-accordion .MuiPaper-root{
+    margin-bottom: 30px;
+    border: none !important;
+}
+.main-accordion .MuiPaper-root .MuiAccordionSummary-root{
+    padding: 5px 20px;
+    background: #8ECB82;
+    color: #fff;
+    border-radius: 10px;
+    z-index: 2;
+}
+.main-accordion .MuiPaper-root .MuiAccordionSummary-root .MuiAccordionSummary-expandIconWrapper{
+    color: #fff;
+}
+.main-accordion .MuiPaper-root .MuiAccordionSummary-root .MuiAccordionSummary-content p{
+    font-weight: 600;
+}
+.main-accordion .MuiPaper-root.Mui-expanded .MuiAccordionSummary-root{
+    background: #E68C3A;
+}
+.main-accordion .MuiPaper-root .MuiAccordionDetails-root {
+    padding: 35px 20px 22px !important;
+    border-radius: 10px;
+    border: none;
+    background: #f3f3f37d;
+    transform: translateY(-15px);
+    color: #333;
+}
+.main-accordion .MuiPaper-root .MuiAccordionDetails-root p{
+    line-height: 26px;
+}

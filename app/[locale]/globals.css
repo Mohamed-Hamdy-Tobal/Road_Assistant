@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import "../../components/styles/app.css"; */
 
 @tailwind base;
 @tailwind components;
@@ -70,8 +71,116 @@
     .main-btn {
         @apply bg-[#42b0d1] hover:bg-[#81d6e1] transition-all duration-300
     }
+
+    .auth-wrapper {
+        @apply bg-[#8CA685]
+    }
+
+    .main-auth {
+        @apply h-[100vh] grid grid-cols-4 p-[70px] rounded-2xl
+    }
+
+    .main-auth .cover {
+        @apply col-span-2 bg-[#204915cc] rounded-tl-[60px] rounded-bl-[60px]
+    }
+
+    .main-auth .auth-content {
+        @apply col-span-2 bg-[#fff] p-5 rounded-tr-[60px] rounded-br-[60px]
+    }
+
+    /* For UI */
+    .form-ui .input {
+        @apply placeholder:text-gray-400 border text-[#6b7280] border-gray-300 dark:border-gray-600 dark:bg-transparent rounded-md w-full py-2 px-3 focus:outline-none focus:ring-1 focus-within:ring-1 appearance-none transition duration-150 dark:text-gray-100 ease-in-out;
+    }
+
+    .form-ui .input.input-invalid {
+        @apply ring-1 ring-red-500 border-red-500;
+    }
+
+    .form-ui .input.input-lg {
+        @apply text-lg;
+    }
+
+    .form-ui .input-addon {
+        @apply flex items-center px-4 rounded-md border border-gray-300 bg-gray-50 dark:border-gray-600 dark:bg-gray-700;
+    }
+
+    .form-ui .input-wrapper {
+        @apply relative w-full flex;
+    }
+
+    .form-ui .input-disabled {
+        @apply bg-gray-100 dark:bg-gray-700 text-gray-400 cursor-not-allowed;
+    }
+
+    .input-suffix-start {
+        @apply absolute top-2/4 transform -translate-y-2/4 ltr:left-2.5 rtl:right-2.5;
+    }
+
+    .input-suffix-end {
+        @apply absolute top-2/4 transform -translate-y-2/4 ltr:right-2.5 rtl:left-2.5 flex;
+    }
+
+    .form-ui .input-group {
+        @apply flex items-center
+    }
+
+    .form-ui .input-group .input {
+        @apply z-10 focus:z-20 focus-within:z-20
+    }
+
+    .form-explain {
+        @apply text-red-500 absolute text-[14px];
+    }
+
+    .form-ui .form-item {
+        @apply mb-7 relative;
+    }
+
+    .form-ui .form-item.horizontal {
+        @apply flex flex-auto;
+    }
+
+    .form-ui .form-item .vertical {
+        @apply flex flex-col;
+    }
+
+    .form-ui .form-label {
+        @apply flex items-center font-semibold text-[#6b7280] text-[14px];
+    }
+
+    .form-ui .form-label.invalid {
+        @apply text-red-500;
+    }
+
+    .form-ui .button {
+        @apply font-semibold h-[44px] focus:outline-none whitespace-nowrap ;
+    }
+
+    .form-ui .button.radius-round {
+        @apply rounded-md;
+    }
+
+    .form-ui .button.radius-circle {
+        @apply rounded-full;
+    }
+
+    .form-ui .button.radius-none {
+        @apply rounded-none;
+    }
 }
 
+
+
+
+
+
+
+
+
+
+
+/*  */
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -98,7 +207,7 @@ header .span-head {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 75px;
+    width: calc(100% + 10px);
     height: 30px;
     z-index: -1;
     display: none;
@@ -451,4 +560,48 @@ header .main-link-header:hover .span-head {
     background: #0080004f !important;
     border: 1px solid #00800000 !important;
     color: #fff !important;
+}
+
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+.login-form,
+.signup-form {
+    max-width: 350px;
+    margin: auto;
+}
+
+.card {
+    background-color: #f7f7f7;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.input-suffix-end {
+    position: absolute;
+    right: .625rem;
+    top: 50%;
+    display: flex;
+    --tw-translate-y: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }

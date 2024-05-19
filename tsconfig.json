@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/career/page.jsx", "components/Home/WorkWith.jsx", "components/Home/HomeServices.jsx", "components/test/myTest.jsx", "components/ScrollToTopButton.jsx", "components/Blog/Blog.jsx", "components/Home/Projects.jsx", "app/career/[careerID]/page.jsx", "app/blog/[blog]/page.jsx", "components/Contact/From.jsx", "components/About/Industry.jsx", "app/[locale]/term-and-conditions/page.jsx", "app/[locale]/privacy-policy/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/career/page.jsx", "components/Home/WorkWith.jsx", "components/Home/HomeServices.jsx", "components/test/myTest.jsx", "components/ScrollToTopButton.jsx", "components/Blog/Blog.jsx", "components/Home/Projects.jsx", "app/career/[careerID]/page.jsx", "app/blog/[blog]/page.jsx", "components/Contact/From.jsx", "components/About/Industry.jsx", "app/[locale]/term-and-conditions/page.jsx", "app/[locale]/privacy-policy/page.jsx", "app/[locale]/dashboard/page.jsx", "app/[locale]/test/page.jsx"],
   "exclude": ["node_modules"]
 }

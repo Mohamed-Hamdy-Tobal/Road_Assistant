@@ -20,18 +20,18 @@ const Header = () => {
     const NavLinksEN = [
         { href: `/${localActive}`, key: 'Home', text: 'Home' },
         { href: `/${localActive}/services`, key: 'Services', text: 'Services' },
-        { href: `/${localActive}/blogs`, key: 'Blog', text: 'Blog' },
         { href: `/${localActive}/faq`, key: "FAQ's", text: "FAQ's" },
         // { href: `/${localActive}/career`, key: 'Career', text: 'Career' },
         { href: `/${localActive}/contact`, key: 'Contact', text: 'Contact' },
+        { href: `/${localActive}/dashboard`, key: 'Dashboard', text: 'Dashboard' },
     ];
     const NavLinksAR = [
         { href: `/${localActive}`, key: 'الرئيسية', text: 'الرئيسية' },
         { href: `/${localActive}/services`, key: 'الخدمات', text: 'الخدمات' },
-        { href: `/${localActive}/blog`, key: 'المدونة', text: 'المدونة' },
         { href: `/${localActive}/faq`, key: 'الاسألة', text: 'الاسألة' },
         // { href: `/${localActive}/career`, key: 'الوظائف', text: 'الوظائف' },
         { href: `/${localActive}/contact`, key: 'اتصل بنا', text: 'اتصل بنا' },
+        { href: `/${localActive}/dashboard`, key: "التطبيق", text: "التطبيق" },
     ];
     const NavLink = localActive == 'en' ? NavLinksEN : NavLinksAR
 
@@ -143,10 +143,6 @@ const Header = () => {
         </header>
     )
 }
-
-
-
-
 
 
 export default Header

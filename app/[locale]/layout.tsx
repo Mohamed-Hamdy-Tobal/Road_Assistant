@@ -5,9 +5,11 @@ import Head from "next/head";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import Footer from "@/components/Footer";
+import RootLayoutRouting from "@/components/RootLayoutRouting";
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import Providers from '@/redux/Provider'
+
 
 export const metadata = {
   title: "Road Assistant",
@@ -28,16 +30,10 @@ export const metadata = {
   },
 }
 
-// interface RootLayoutProps {
-//   children: React.ReactNode;
-//   params: {
-//     locale: string;
-//   }
-// }
 
 export default function RootLayout({
   children,
-  params: {locale}
+  params: { locale }
 }: {
   children: React.ReactNode
   params: {
@@ -50,11 +46,11 @@ export default function RootLayout({
         <meta name="description" content={metadata.description} />
       </Head>
       <body suppressHydrationWarning={true}>
-        <Header/>
-        {children}
-        <Footer/>
+        <Providers>
+          <RootLayoutRouting>{children}</RootLayoutRouting>
+        </Providers>
+        <ToastContainer />
         <ScrollToTopButton />
-        <ToastContainer/>
       </body>
     </html>
   )

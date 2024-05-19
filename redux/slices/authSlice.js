@@ -14,7 +14,7 @@ const getInitialState = () => {
             token: token || null,
             error: null,
             loading: false,
-            isLoggedIn: token ? token : false,
+            isLoggedIn: token ? token : "empty",
         };
     }
     return {
@@ -22,7 +22,7 @@ const getInitialState = () => {
         token: null,
         error: null,
         loading: false,
-        isLoggedIn: false,
+        isLoggedIn: "empty",
     };
 };
 
@@ -93,7 +93,7 @@ const logoutAction = (state) => {
             token: token || null,
             error: null,
             loading: false,
-            isLoggedIn: token ? token : false,
+            isLoggedIn: token ? token : "empty",
         };
     }
 };

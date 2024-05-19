@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation'
 import Image from "next/image";
 import LocalSwitcher from "./LocalSwitcher";
 import { useLocale } from "next-intl";
+import { useSelector } from "react-redux";
 
 // ...
 
@@ -16,6 +17,7 @@ const Header = () => {
 
     const localActive = useLocale()
     console.log("localActive header", localActive)
+    const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn);
 
     const NavLinksEN = [
         { href: `/${localActive}`, key: 'Home', text: 'Home' },
@@ -23,7 +25,7 @@ const Header = () => {
         { href: `/${localActive}/faq`, key: "FAQ's", text: "FAQ's" },
         // { href: `/${localActive}/career`, key: 'Career', text: 'Career' },
         { href: `/${localActive}/contact`, key: 'Contact', text: 'Contact' },
-        { href: `/${localActive}/dashboard`, key: 'Dashboard', text: 'Dashboard' },
+        { href: `/${localActive}/dashboard`, key: 'Dashboard', text: isLoggedIn === 'empty'? "Login" :'Dashboard' },
     ];
     const NavLinksAR = [
         { href: `/${localActive}`, key: 'الرئيسية', text: 'الرئيسية' },
@@ -31,7 +33,7 @@ const Header = () => {
         { href: `/${localActive}/faq`, key: 'الاسألة', text: 'الاسألة' },
         // { href: `/${localActive}/career`, key: 'الوظائف', text: 'الوظائف' },
         { href: `/${localActive}/contact`, key: 'اتصل بنا', text: 'اتصل بنا' },
-        { href: `/${localActive}/dashboard`, key: "التطبيق", text: "التطبيق" },
+        { href: `/${localActive}/dashboard`, key: "التطبيق", text: isLoggedIn === 'empty'? "دخول" :'التطبيق' },
     ];
     const NavLink = localActive == 'en' ? NavLinksEN : NavLinksAR
 

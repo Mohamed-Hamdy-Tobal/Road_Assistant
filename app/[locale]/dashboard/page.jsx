@@ -236,9 +236,13 @@ EnhancedTableToolbar.propTypes = {
 export default function Dashboard() {
 
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+    const tokenLocal = localStorage.getItem("token")
 
-    console.log("isLoggedIn : ", isLoggedIn === 'empty')
-    console.log("isLoggedIn : ", isLoggedIn !== 'empty')
+    console.log("isLoggedIn : ", isLoggedIn) 
+    console.log("isLoggedIn token : ", localStorage.getItem("token")) 
+    console.log("isLoggedIn tokenLocal : ", isLoggedIn === 'empty' || tokenLocal) 
+    console.log("isLoggedIn empty: ", isLoggedIn === 'empty') 
+    console.log("isLoggedIn empty: ", isLoggedIn !== 'empty')
 
     const dispatch = useDispatch();
     const router = useRouter();
@@ -250,7 +254,7 @@ export default function Dashboard() {
             console.log("PUSH")
             router.push(`/${localActive}/login`);
         }
-    }, [isLoggedIn])
+    }, [isLoggedIn, tokenLocal, router, localActive]);
 
 
     const handleLogout = () => {

@@ -251,13 +251,11 @@ export default function Dashboard() {
 
     React.useEffect(() => {
         if (isLoggedIn === 'empty') {
+            console.log("PUSH")
             router.push(`/${localActive}/login`);
         }
     }, [isLoggedIn, tokenLocal, router, localActive]);
 
-    if (isLoggedIn === 'empty') {
-        return null; // or a loading indicator
-    }
 
     const handleLogout = () => {
         if (typeof window !== "undefined" && window.localStorage) {

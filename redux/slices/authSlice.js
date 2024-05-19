@@ -48,7 +48,7 @@ export const register = createAsyncThunk(
                 error.message ||
                 error.toString();
             thunkAPI.dispatch(setMessage(message));
-            toast.error(message);
+            toast.error("Invalid Data!");
             return thunkAPI.rejectWithValue();
         }
     }
@@ -77,7 +77,7 @@ export const login = createAsyncThunk(
                 error.message ||
                 error.toString();
             thunkAPI.dispatch(setMessage(message));
-            toast.error(message);
+            toast.error("Invalid Data!");
             return thunkAPI.rejectWithValue();
         }
     }
@@ -106,29 +106,41 @@ const authSlice = createSlice({
     },
     extraReducers: builder => {
         builder
+            .addCase(register.pending, (state) => {
+                state.loading = true;
+            })
             .addCase(register.fulfilled, (state, action) => {
-                state.isLoggedIn = action.payload.token ? true: false;
+                state.isLoggedIn = action.payload.token ? true : false;
                 state.user = action.payload.user;
                 console.log("USer : ", state.user)
                 console.log("is signup : ", state.isLoggedIn)
                 state.token = action.payload.token;
+                state.loading = false;
             })
             .addCase(register.rejected, (state) => {
-                state.isLoggedIn = false;
+                state.isLoggedIn = 'empty';
                 state.user = null;
-                state.token = null;
+                state.token = 'empty';
+                state.loading = false;
+                console.log("rejected")
+            })
+            .addCase(login.pending, (state) => {
+                state.loading = true;
             })
             .addCase(login.fulfilled, (state, action) => {
-                state.isLoggedIn = action.payload.token ? true: false;
+                state.isLoggedIn = action.payload.token ? true : false;
                 state.user = action.payload.user;
                 console.log("USer : ", state.user)
                 console.log("isLoggedIn : ", state.isLoggedIn)
                 state.token = action.payload.token;
+                state.loading = false;
             })
             .addCase(login.rejected, (state) => {
-                state.isLoggedIn = false;
+                state.isLoggedIn = 'empty';
                 state.user = null;
-                state.token = null;
+                state.token = 'empty';
+                state.loading = false;
+                console.log("rejected")
             });
     }
 });

@@ -34,7 +34,7 @@ const Login = () => {
   const localActive = useLocale()
   const router = useRouter();
 
-  const { isLoggedIn, user } = useSelector((state) => state.auth);
+  const { isLoggedIn, loading } = useSelector((state) => state.auth);
   const { message } = useSelector((state) => state.message);
 
   const dispatch = useDispatch();
@@ -94,6 +94,9 @@ const Login = () => {
 
   return (
     <div className='form-ui'>
+      {/* {loading ? (
+                <div>Waiting...</div>
+            ) : ''} */}
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -135,7 +138,7 @@ const Login = () => {
                 />
               </FormItem>
               <div className="mb-4">
-                <Button className='bg-[#2B5F1D] w-full hover:bg-[#2b5f1db6]' variant="solid" loading={isSubmitting} type="submit" disabled={!dirty || isSubmitting} >
+                <Button className='bg-[#2B5F1D] w-full hover:bg-[#2b5f1db6]' variant="solid" loading={loading? true: false} type="submit" disabled={!dirty || isSubmitting} >
                   {isSubmitting ? "Submitting" : "Submit"}
                 </Button>
               </div>

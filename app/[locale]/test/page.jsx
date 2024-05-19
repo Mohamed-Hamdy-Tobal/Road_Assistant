@@ -136,23 +136,14 @@ import Link from "next/link";
 import dynamic from 'next/dynamic'
 import Login from '@/components/Auth/Login'
 import Cover from '@/components/layout/CoverLayout'
+import Loading from "@/components/Loading";
 
 const SignIn = () => {
 
     const localActive = useLocale()
 
     return (
-        <Cover
-            content={
-                <>
-                    <h3 className="mb-1">Welcome back!</h3>
-                    <p>Please enter your credentials to sign in!</p>
-                </>
-            }
-        >
-            <Login />
-            <span>Not a member? <Link href={`/${localActive}/signup`} className='text-[#2B5F1D] underline hover:text-[#2b5f1dbb] font-semibold transition-all'>Create an account</Link></span>
-        </Cover>
+        <Loading loading={true} type={'default'}/>
         // <div className="auth-wrapper">
         //     <main className="main-auth">
         //         <div className="cover flex justify-center items-center gap-10 flex-col">

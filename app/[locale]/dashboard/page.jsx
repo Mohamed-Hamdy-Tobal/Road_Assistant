@@ -263,7 +263,7 @@ export default function Dashboard() {
             console.log("isLoggedIn logout: ", isLoggedIn)
         }
         toast.success("Logged out successfully!");
-        router.push(`/${localActive}`);
+        // router.push(`/${localActive}`);
     };
 
 

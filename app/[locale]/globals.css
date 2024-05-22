@@ -556,13 +556,6 @@ header .main-link-header:hover .span-head {
     text-align: right !important;
 }
 
-.css-1e6y48t-MuiButtonBase-root-MuiButton-root.Mui-disabled {
-    background: #0080004f !important;
-    border: 1px solid #00800000 !important;
-    color: #fff !important;
-}
-
-
 label {
     display: block;
     margin-top: 10px;
@@ -620,4 +613,11 @@ label {
     .row-links {
         grid-row: 1;
     }
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root.Mui-disabled,
+.css-1ujsas3.Mui-disabled {
+    background: #0080004f !important;
+    border: 1px solid #00800000 !important;
+    color: #fff !important;
 }

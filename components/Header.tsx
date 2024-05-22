@@ -30,7 +30,7 @@ const Header = () => {
     const NavLinksAR = [
         { href: `/${localActive}`, key: 'الرئيسية', text: 'الرئيسية' },
         { href: `/${localActive}/services`, key: 'الخدمات', text: 'الخدمات' },
-        { href: `/${localActive}/faq`, key: 'الاسألة', text: 'الاسألة' },
+        { href: `/${localActive}/faq`, key: "أسئلة", text: "أسئلة" },
         // { href: `/${localActive}/career`, key: 'الوظائف', text: 'الوظائف' },
         { href: `/${localActive}/contact`, key: 'اتصل بنا', text: 'اتصل بنا' },
         { href: isLoggedIn === "empty"? `/${localActive}/login` :`/${localActive}/dashboard`, key: "التطبيق", text: isLoggedIn === "empty"? "دخول" :"التطبيق" },

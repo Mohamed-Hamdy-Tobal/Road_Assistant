@@ -39,7 +39,7 @@ const HomeAboutUS = () => {
     const dataAbout = localActive == 'en' ? dataAboutEN : dataAboutAR
 
     return (
-        <div className="about overflow-hidden">
+        <div id='about' className="about overflow-hidden">
             <div className="about-main md:pb-14 pt-44">
                 <div className="container" >
                     <div className={`${localActive == 'ar' ? 'reflect-landing reflect-dir':''} flex flex-col lg:flex-row flex-wrap items-center justify-between`}>
@@ -56,7 +56,7 @@ const HomeAboutUS = () => {
                                     ))}
                                 </div>
                                 <motion.div className="my-btn mt-[40px]" variants={bottomVariants}>
-                                    <Link href='/services' className="btn inline-block">{dataAbout.btn}</Link>
+                                    <Link href={`/${localActive}/services`} className="btn inline-block">{dataAbout.btn}</Link>
                                 </motion.div>
                             </div>
                         </motion.div>

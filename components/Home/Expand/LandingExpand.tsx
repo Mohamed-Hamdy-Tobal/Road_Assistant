@@ -54,7 +54,7 @@ const LandingExpand = ({ title, mainTitle, desc, button }: {
                                 {desc}
                             </motion.p>
                             <motion.div className='my-btn' variants={textVariants}>
-                                <Link href={`/${localActive}/about`} className='btn inline-block'>
+                                <Link href={`#about`} className='btn inline-block'>
                                     {button}
                                 </Link>
                             </motion.div>

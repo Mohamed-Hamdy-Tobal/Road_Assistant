@@ -36,7 +36,7 @@ const Quotes = () => {
                                     <p className="pb-2">{intro.desc}</p>
                                 </div>
                                 <div className="my-btn mt-3">
-                                    <Link href={`/${localActive}/services`} className="btn inline-block">{intro.btn}</Link>
+                                    <Link href={`/${localActive}/faq`} className="btn inline-block">{intro.btn}</Link>
                                 </div>
                             </div>
                         </div>

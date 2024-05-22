@@ -12,7 +12,7 @@ const BoxItem = ({ img, title, desc }: { img: any, title: string, desc: string }
                 </div>
                 <div className="text-center flex-1">
                     <h5 className="font-bold mb-4 text-[24px]">{title}</h5>
-                    <p className="mb-4 text-[18px] leading-[20px]">{desc}</p>
+                    <p className="mb-4 text-[18px] leading-[24px]">{desc}</p>
                     <a href="blog-details.html" className="text-primary"><i className="fal fa-long-arrow-right"></i></a>
                 </div>
             </div>

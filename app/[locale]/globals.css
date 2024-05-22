@@ -608,3 +608,16 @@ label {
 .my-spin {
     color: #27541C;
 }
+.MuiListItemButton-root {
+    width: 200px;
+    background: #eeeeee85;
+}
+
+@media (min-width: 992px) {
+    .up-footer {
+        grid-column: 3 / 6;
+    }
+    .row-links {
+        grid-row: 1;
+    }
+}

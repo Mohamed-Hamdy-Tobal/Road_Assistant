@@ -15,7 +15,7 @@ import { clearMessage } from "../../redux/slices/message";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from 'next/navigation';
 
 // toast.configure();

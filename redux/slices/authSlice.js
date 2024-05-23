@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setMessage } from "./message";
 import AuthService from "../service/auth.service";
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 
@@ -63,9 +63,9 @@ export const login = createAsyncThunk(
         try {
             const response = await AuthService.login(username, password);
             toast.success("Login successful!");
+            console.log("THe response login", response)
 
-            const { is_customer, token, user_id } = response;
-            const user = { is_customer, user_id, username };
+            const { user, token } = response;
 
             if (typeof window !== "undefined" && window.localStorage) {
                 localStorage.setItem("user", JSON.stringify(user));

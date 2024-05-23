@@ -4,66 +4,68 @@ import MenuItem from '@mui/material/MenuItem';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import React, { useEffect } from 'react';
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { postTableData, setFilter, setUserLocation } from '@/redux/slices/tableSlice';
-
 import { useRouter } from 'next/navigation';
 import { useLocale } from "next-intl";
-import { logout } from '@/redux/slices/authSlice';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import GoogleMapIcon from "@/components/Dashboard/GoogleMapIcon"
 import WhatsAppPhone from "@/components/Dashboard/WhatsAppPhone"
 import PhoneDialer from "@/components/Dashboard/PhoneDialer"
+import HeaderDashboard from "@/components/Dashboard/HeaderDashboard"
+import dynamic from 'next/dynamic'
+import Loading from '@/components/Loading'
+import { toast } from 'react-toastify';
 
-const options = [ 
-    'All',
-    'Mechanical',
-    'gas station',
+const optionsRadius = [5, 10, 15, 20];
+const options = [
+    { label: "All", value: "All" },
+    { label: "Engin Oil", value: "gas station" },
+    { label: "Mechanical", value: "Mechanical" },
+    { label: "Towing", value: "towing" },
+    { label: "Locked", value: "locked" },
+    { label: "Low Fuel", value: "low fuel" },
+    { label: "Flat Tire", value: "flat tire" },
+    { label: "Engin Oil", value: "flat tire" },
+    { label: "Break Down", value: "flat tire" },
+    { label: "Battery Dead", value: "flat tire" },
+    { label: "Engin Head", value: "flat tire" },
 ];
 
 const Table = () => {
 
-    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-    let tokenLocal = 'empty'
 
+    const [serviceType, setServiceType] = useState('')
+
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+    const { data, filter, status, error } = useSelector((state) => state.table);
+
+    const dispatch = useDispatch();
+    const router = useRouter();
+    const localActive = useLocale()
+
+    let tokenLocal = 'empty'
     if (typeof window !== "undefined" && window.localStorage) {
         tokenLocal = localStorage.getItem("token")
     }
 
-    const dispatch = useDispatch();
-    const router = useRouter();
-
-    const localActive = useLocale()
-
     React.useEffect(() => {
         if (isLoggedIn === 'empty') {
-            console.log("PUSH")
             router.push(`/${localActive}/login`);
         }
-    }, [isLoggedIn, tokenLocal, router, localActive]);
+    }, [isLoggedIn, router, localActive]);
 
-
-    const handleLogout = () => {
-        dispatch(logout())
-        // router.push(`/${localActive}`);
-    };
-
-    const { data, filter, status, error, userLocation } = useSelector((state) => state.table);
-
-    // Set the initial filter to 'All' on the first render
-    useEffect(() => {
-        dispatch(setFilter('All'));
-    }, [dispatch]);
-
+    // For Location
     useEffect(() => {
         if (status === 'idle') {
             // Get the user's location
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     const { latitude, longitude } = position.coords;
-                    // console.log("Location : ", latitude, longitude)
                     dispatch(setUserLocation({ lat: latitude, lon: longitude }));
                 },
                 (error) => {
@@ -73,15 +75,11 @@ const Table = () => {
         }
     }, [status, dispatch]);
 
+
+    // For The Radius
     useEffect(() => {
-        if (userLocation) {
-            dispatch(postTableData());
-        }
-    }, [userLocation, dispatch]);
-
-    const filteredData = filter === 'All' ? data.nearby_service_providers : data.nearby_service_providers.filter(item => item.service_type === filter);
-
-    console.log("filteredData IN Dash", data)
+        dispatch(setFilter(10));
+    }, [dispatch]);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -93,65 +91,96 @@ const Table = () => {
     const handleMenuItemClick = (event, index) => {
         setSelectedIndex(index);
         setAnchorEl(null);
-        const selectedFilter = options[index];
+        const selectedFilter = optionsRadius[index];
         dispatch(setFilter(selectedFilter));
+        dispatch(postTableData(serviceType));
+        console.log("selectedFilter radius : ", selectedFilter)
+        console.log("serviceType in  radius : ", serviceType)
     };
 
     const handleClose = () => {
         setAnchorEl(null);
     };
 
+
+
+    // For Modal State Type
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const handleOpenModal = () => {
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+    };
+
+    const handleServiceSelect = (service) => {
+        setServiceType(service)
+        dispatch(postTableData(service)); // Dispatch with the selected service
+        handleCloseModal();
+    };
+
+    console.log("Data In Dash : , ", data)
+
+
     return (
-        <div className='my-[100px]'>
-            <div>
-                <button onClick={handleLogout}>Logout</button>
-            </div>
-            <div className='flex justify-center items-center'>
-                <List
-                    component="nav"
-                    aria-label="Device settings"
-                    sx={{ bgcolor: 'background.paper' }}
-                >
-                    <ListItemButton
-                        id="lock-button"
-                        aria-haspopup="listbox"
-                        aria-controls="lock-menu"
-                        aria-label="job"
-                        aria-expanded={open ? 'true' : undefined}
-                        onClick={handleClickListItem}
+        <div className="dashboard">
+            <HeaderDashboard />
+            <div className='my-[100px]'>
+
+                <div className='mb-5 flex justify-center items-center'>
+                    <List
+                        component="nav"
+                        aria-label="Device settings"
+                        sx={{ bgcolor: 'background.paper' }}
                     >
-                        <ListItemText
-                            primary="Job"
-                            secondary={options[selectedIndex]}
-                        />
-                    </ListItemButton>
-                </List>
-                <Menu
-                    id="lock-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                        'aria-labelledby': 'lock-button',
-                        role: 'listbox',
-                    }}
-                >
-                    {options.map((option, index) => (
-                        <MenuItem
-                            key={option}
-                            selected={index === selectedIndex}
-                            onClick={(event) => handleMenuItemClick(event, index)}
+                        <ListItemButton
+                            id="lock-button"
+                            aria-haspopup="listbox"
+                            aria-controls="lock-menu"
+                            aria-label="radius in km"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClickListItem}
                         >
-                            {option}
-                        </MenuItem>
-                    ))}
-                </Menu>
-            </div>
+                            <ListItemText
+                                primary="Radius in km"
+                                secondary={optionsRadius[selectedIndex]}
+                            />
+                        </ListItemButton>
+                    </List>
+                    <Menu
+                        id="lock-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                            'aria-labelledby': 'lock-button',
+                            role: 'listbox',
+                        }}
+                    >
+                        {optionsRadius.map((option, index) => (
+                            <MenuItem
+                                key={option}
+                                selected={index === selectedIndex}
+                                onClick={(event) => handleMenuItemClick(event, index)}
+                            >
+                                {option}
+                            </MenuItem>
+                        ))}
+                    </Menu>
+                </div>
 
-            {status === 'loading' && <div>Loading...</div>}
-            {status === 'failed' && <div>Error: {error}</div>}
+                {status === 'loading' && <Loading spinnerClass='my-spin ' loading={status === 'loading'} type={'default'} />}
+                {status === 'failed' && toast.error("Can't Fetch Data Now!")}
 
-            {status === 'succeeded' && (
+                <div className='text-center mb-5'>
+                    <Button variant="outlined" color="primary" onClick={handleOpenModal}>
+                        Select Service
+                    </Button>
+                </div>
+
+
                 <div className='relative overflow-x-auto'>
                     <table className='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
                         <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
@@ -163,24 +192,57 @@ const Table = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {filteredData.map((item) => (
-                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={item.id}>
-                                    <td className="px-6 py-4">{item.username}</td>
-                                    <td className="px-6 py-4">{item.service_type}</td>
-                                    <td className="px-6 py-4"><GoogleMapIcon latitude={item.location[1]} longitude={item.location[0]} /></td>
-                                    {/* <td className="px-6 py-4">{`${item.location[0]}, ${item.location[1]}`}</td> */}
-                                    <td className="px-6 py-4"><PhoneDialer phoneNumber={item.phone_number} /> -  <WhatsAppPhone phoneNumber={`+20${item.phone_number}`} /></td>
-                                </tr>
-                            ))}
+                            {status === 'succeeded' && data.nearby_service_providers.length > 0 ?
+                                data.nearby_service_providers.map((item) => (
+                                    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={item.id}>
+                                        <td className="px-6 py-4">{item.username}</td>
+                                        <td className="px-6 py-4">{item.service_type}</td>
+                                        <td className="px-6 py-4"><GoogleMapIcon latitude={item.location[1]} longitude={item.location[0]} /></td>
+                                        <td className="px-6 py-4"><PhoneDialer phoneNumber={item.phone_number} /> - <WhatsAppPhone phoneNumber={`+20${item.phone_number}`} /></td>
+                                    </tr>
+                                )) :
+                                "There Is No Data Yet"}
                         </tbody>
                     </table>
                 </div>
-            )}
+
+                <ServiceModal
+                    open={modalOpen}
+                    handleClose={handleCloseModal}
+                    handleServiceSelect={handleServiceSelect}
+                />
+            </div>
         </div>
     );
 };
 
-export default Table;
+const ServiceModal = ({ open, handleClose, handleServiceSelect }) => (
+    <Modal open={open} onClose={handleClose}>
+        <Box sx={{ ...style, width: 400 }}>
+            <Typography variant="h6" component="h2">
+                Select a Service
+            </Typography>
+            <List>
+                {options.map((option) => (
+                    <ListItemButton key={option} onClick={() => handleServiceSelect(option.value)}>
+                        <ListItemText primary={option.label} />
+                    </ListItemButton>
+                ))}
+            </List>
+        </Box>
+    </Modal>
+);
 
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
 
-// <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13608.076191522361!2d31.822097349999993!3d31.496160250000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1716465430011!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+export default dynamic(() => Promise.resolve(Table), { ssr: false })

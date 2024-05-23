@@ -11,13 +11,14 @@ import LocalSwitcher from "./LocalSwitcher";
 import { useLocale } from "next-intl";
 import { useSelector } from "react-redux";
 import dynamic from 'next/dynamic'
+import UserDropdown from "@/components/UserDropdown"
 // ...
 
 const Header = () => {
 
     const localActive = useLocale()
     console.log("localActive header", localActive)
-    const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn);
+    const { isLoggedIn, user } = useSelector((state: any) => state.auth);
 
     const NavLinksEN = [
         { href: `/${localActive}`, key: 'Home', text: 'Home' },
@@ -25,7 +26,7 @@ const Header = () => {
         { href: `/${localActive}/faq`, key: "FAQ's", text: "FAQ's" },
         // { href: `/${localActive}/career`, key: 'Career', text: 'Career' },
         { href: `/${localActive}/contact`, key: 'Contact', text: 'Contact' },
-        { href: isLoggedIn === "empty"? `/${localActive}/login` :`/${localActive}/dashboard`, key: "Dashboard", text: isLoggedIn === "empty"? "Login" :"Dashboard" },
+        { href: isLoggedIn === "empty" ? `/${localActive}/login` : `/${localActive}/dashboard`, key: "Dashboard", text: isLoggedIn === "empty" ? "Login" : "Dashboard" },
     ];
     const NavLinksAR = [
         { href: `/${localActive}`, key: 'الرئيسية', text: 'الرئيسية' },
@@ -33,7 +34,7 @@ const Header = () => {
         { href: `/${localActive}/faq`, key: "أسئلة", text: "أسئلة" },
         // { href: `/${localActive}/career`, key: 'الوظائف', text: 'الوظائف' },
         { href: `/${localActive}/contact`, key: 'اتصل بنا', text: 'اتصل بنا' },
-        { href: isLoggedIn === "empty"? `/${localActive}/login` :`/${localActive}/dashboard`, key: "التطبيق", text: isLoggedIn === "empty"? "دخول" :"التطبيق" },
+        { href: isLoggedIn === "empty" ? `/${localActive}/login` : `/${localActive}/dashboard`, key: "التطبيق", text: isLoggedIn === "empty" ? "دخول" : "التطبيق" },
     ];
     const NavLink = localActive == 'en' ? NavLinksEN : NavLinksAR
 
@@ -104,6 +105,9 @@ const Header = () => {
                     <div className="switcher1 block lg:hidden">
                         <LocalSwitcher />
                     </div>
+                    <div className="block lg:hidden">
+                        <UserDropdown />
+                    </div>
                 </div>
                 <nav className={`${isHeaderOpen ? 'menu-show' : ''} ${localActive == 'ar' ? "flex-row-reverse" : ""} flex gap-6 justify-center items-center menu-toggle transition-all duration-300`}>
                     <div className="toggle-mobile flex justify-between items-center w-full pt-[30px]">
@@ -137,6 +141,11 @@ const Header = () => {
                                     } text-white inline-block hover:scale-105 md:hover:scale-100 hover:text-secoColor font-bold transition-all duration-500`}></span>
                             </Link></li>)}
                     </ul>
+                    {isLoggedIn && user && (
+                        <div className="hidden lg:block">
+                            <UserDropdown />
+                        </div>
+                    )}
                     <div className="switcher2 hidden lg:block">
                         <LocalSwitcher />
                     </div>

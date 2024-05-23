@@ -9,6 +9,8 @@ import { useLocale } from "next-intl";
 
 const RootLayoutRouting = ({ children }: { children: React.ReactNode }) => {
     const { loading } = useSelector((state: any) => state.auth);
+    const { status } = useSelector((state: any) => state.table);
+    console.log("status from RootLayoutRouting : ", status)
     const pathname = usePathname()
     const localActive = useLocale()
 
@@ -20,6 +22,7 @@ const RootLayoutRouting = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
             {loading && <Loading spinnerClass='my-spin ' loading={loading} type={'default'}/>}
+            {status === 'loading' && <Loading spinnerClass='my-spin ' loading={loading} type={'default'}/>}
             {isDashboardRoute || isLogin || isSignUp ? (
                 <>
                     {children}

@@ -5,15 +5,17 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { useSelector } from 'react-redux';
 import Loading from '../components/Loading'
+import { useLocale } from "next-intl";
 
 const RootLayoutRouting = ({ children }: { children: React.ReactNode }) => {
-    const { isLoggedIn, loading } = useSelector((state: any) => state.auth);
+    const { loading } = useSelector((state: any) => state.auth);
     const pathname = usePathname()
+    const localActive = useLocale()
 
     // Check if the route is http://localhost:3000/en/dashboard
-    const isDashboardRoute = pathname === '/en/dashboard' && '/ar/dashboard';
-    const isLogin = pathname === '/en/login' && '/ar/login';
-    const isSignUp = pathname === '/en/signup' && '/ar/signup';
+    const isDashboardRoute = pathname === `/${localActive}/dashboard`;
+    const isLogin = pathname === `/${localActive}/login`;
+    const isSignUp = pathname === `/${localActive}/signup`;
 
     return (
         <>

@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import Image from 'next/image'
 
 const Logo = (props) => {
     const {
@@ -21,9 +22,11 @@ const Logo = (props) => {
             {type === 'full' ? (
                 <div className='flex justify-start gap-2 items-center text-[30px] py-5 font-medium'>
                     <div className='flex justify-center items-center'>
-                        <img
+                        <Image
+                            width={45}
+                            height={45}
                             className={imgClass}
-                            src={`/logo.svg`}
+                            src={`/logo.svg`} 
                             alt={`app logo`}
                         />
                     </div>
@@ -31,7 +34,9 @@ const Logo = (props) => {
                 </div>
             ) : (
                 <div className='flex justify-center items-center'>
-                    <img
+                    <Image
+                        width={45}
+                        height={45}
                         className={imgClass}
                         src={`/logo.svg`}
                         alt={`app logo`}

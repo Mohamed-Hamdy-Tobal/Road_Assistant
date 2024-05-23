@@ -3,6 +3,8 @@ import { setMessage } from "./message";
 import AuthService from "../service/auth.service";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+
 
 // Helper function to get initial state
 const getInitialState = () => {
@@ -83,27 +85,55 @@ export const login = createAsyncThunk(
     }
 );
 
-// Logout action
-const logoutAction = (state) => {
-    if (typeof window !== "undefined" && window.localStorage) {
-        const user = JSON.parse(localStorage.getItem("user"));
-        const token = localStorage.getItem("token");
-        return {
-            user: user || null,
-            token: token || null,
-            error: null,
-            loading: false,
-            isLoggedIn: token ? token : "empty",
-        };
+// Logout thunk
+export const logout = createAsyncThunk(
+    "auth/logout",
+    async (_, thunkAPI) => {
+        let token;
+        if (typeof window !== "undefined" && window.localStorage) {
+            token = localStorage.getItem("token");
+        }
+
+        console.log("Logout Token 1 : ", token)
+
+        try {
+            const response = await axios.post(
+                "https://geodjango-test-no-docker.onrender.com/api/logout/",
+                {},
+                {
+                    headers: {
+                        Authorization: "Token " + token,
+                    }
+                }
+            );
+            
+            toast.success("Logout successful!");
+            if (typeof window !== "undefined" && window.localStorage) {
+                localStorage.setItem("user", JSON.stringify(null));
+                localStorage.setItem("token", 'empty');
+            }
+            
+            return { user: null, token: 'token' };
+
+        } catch (error) {
+            const message =
+                (error.response && error.response.data && error.response.data.message) ||
+                error.message ||
+                error.toString();
+            thunkAPI.dispatch(setMessage(message));
+            console.log("Logout message : ", message)
+            toast.error("Error during logout!");
+            return thunkAPI.rejectWithValue();
+        }
     }
-};
+);
+
+
+
 
 const authSlice = createSlice({
     name: "auth",
     initialState: getInitialState(),
-    reducers: {
-        logout: logoutAction,
-    },
     extraReducers: builder => {
         builder
             .addCase(register.pending, (state) => {
@@ -141,10 +171,22 @@ const authSlice = createSlice({
                 state.token = 'empty';
                 state.loading = false;
                 console.log("rejected")
+            })
+            .addCase(logout.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(logout.fulfilled, (state) => {
+                state.isLoggedIn = 'empty';
+                state.user = null;
+                state.token = 'empty';
+                state.loading = false;
+            })
+            .addCase(logout.rejected, (state) => {
+                state.loading = false;
             });
     }
 });
 
-export const { logout } = authSlice.actions;
+
 const { reducer } = authSlice;
 export default reducer;

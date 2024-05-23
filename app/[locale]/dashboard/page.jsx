@@ -169,7 +169,7 @@ const Table = () => {
                                     <td className="px-6 py-4">{item.service_type}</td>
                                     <td className="px-6 py-4"><GoogleMapIcon latitude={item.location[1]} longitude={item.location[0]} /></td>
                                     {/* <td className="px-6 py-4">{`${item.location[0]}, ${item.location[1]}`}</td> */}
-                                    <td className="px-6 py-4"><PhoneDialer phoneNumber={item.phone_number} /> -  <WhatsAppPhone phoneNumber={`+2${item.phone_number}`} /></td>
+                                    <td className="px-6 py-4"><PhoneDialer phoneNumber={item.phone_number} /> -  <WhatsAppPhone phoneNumber={`+20${item.phone_number}`} /></td>
                                 </tr>
                             ))}
                         </tbody>

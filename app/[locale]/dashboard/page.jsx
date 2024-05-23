@@ -172,7 +172,7 @@ const Table = () => {
                 </div>
 
                 {status === 'loading' && <Loading spinnerClass='my-spin ' loading={status === 'loading'} type={'default'} />}
-                {status === 'failed' && toast.error("Can't Fetch Data Now!")}
+                {status === 'failed' && toast.info("No nearby Service Providers!")}
 
                 <div className='text-center mb-5'>
                     <Button variant="outlined" color="primary" onClick={handleOpenModal}>

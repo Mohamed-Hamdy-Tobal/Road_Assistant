@@ -124,9 +124,19 @@ const Table = () => {
     }, [isLoggedIn, router, localActive]);
 
 
+    // If Error From Server
+    useEffect(() => {
+        if (status === 'failed') {
+            toast.error(`Error with server: ${error}`);
+        }
+    }, [status, error]);
+
     return (
         <div className="dashboard">
+            {status === 'loading' && <Loading spinnerClass='my-spin ' loading={status === 'loading'} type={'default'} />}
+
             <HeaderDashboard />
+            
             <div className='my-[100px]'>
 
                 <div className='mb-5 flex justify-center items-center'>
@@ -170,9 +180,6 @@ const Table = () => {
                         ))}
                     </Menu>
                 </div>
-
-                {status === 'loading' && <Loading spinnerClass='my-spin ' loading={status === 'loading'} type={'default'} />}
-                {status === 'failed' && toast.info("No nearby Service Providers!")}
 
                 <div className='text-center mb-5'>
                     <Button variant="outlined" color="primary" onClick={handleOpenModal}>

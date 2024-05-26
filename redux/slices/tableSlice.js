@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const initialState = {
     data: [],
@@ -41,6 +42,10 @@ export const postTableData = createAsyncThunk('table/postTableData', async (serv
         }
     );
     console.log("Table Data Fetched:", response);
+    if (response.data.nearby_service_providers.length === 0) {
+        // Show toast notification if data is empty
+        toast.info("No nearby Service Providers!");
+    }
     return response.data;
 });
 

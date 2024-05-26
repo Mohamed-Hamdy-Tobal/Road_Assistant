@@ -24,7 +24,7 @@ const Header = () => {
                 <Link href={`/${localActive}/`} className="block">
                     <Image src="/logo.svg" alt='logo' ref={imgRef} width={60} height={20} />
                 </Link>
-                {user && <h1 className='text-white font-semibold text-[16px] sm:text-[18px]'><span className="text-[#fbfbfb]">Hello </span> <span className="text-[#ffc087] tracking-tight">{user.first_name} {user.last_name}</span></h1>}
+                {user && <h1 className='text-white font-semibold text-[14px] sm:text-[18px]'><span className="text-[#fbfbfb]">Hello </span> <span className="text-[#ffc087] tracking-tight">{user.first_name} {user.last_name}</span></h1>}
                 <div className="main-menu-mobile flex justify-end items-center flex-row-reverse">
                     <div className="block">
                         <UserDropdown />

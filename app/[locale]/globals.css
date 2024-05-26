@@ -14,6 +14,7 @@
 /* Define scrollbar styles */
 ::-webkit-scrollbar {
     width: 10px;
+    background: #fcfcfcee;
     /* Width of the scrollbar */
 }
 
@@ -620,4 +621,30 @@ label {
     background: #0080004f !important;
     border: 1px solid #00800000 !important;
     color: #fff !important;
+}
+.base-Popup-root {
+    z-index: 100 !important;
+    position: fixed !important;
+    top: 110px !important;
+    right: 20px !important;
+    transform: none !important;
+    left: auto !important;
+    width: fit-content;
+}
+.base-MenuButton-root {
+    padding: 0 !important;
+}
+.menu-item-divider {
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+.popup-scrolled {
+    top: 110px !important;
+}
+.popup-scrolled-bot {
+    top: 56px !important;
 }

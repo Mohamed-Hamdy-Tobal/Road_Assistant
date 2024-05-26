@@ -67,6 +67,18 @@ const Header = () => {
                         imgRef.current.style.width = '40px';
                     }
                 }
+                const popupElem = document.querySelector('.base-Popup-root') as HTMLElement;
+                const popupElemOpen = document.querySelector('.base--open') as HTMLElement;
+                if (popupElem) {
+                    // popupElem.style.top = '69px';
+                    popupElem.classList.remove('popup-scrolled');
+                    popupElem.classList.add('popup-scrolled-bot');
+                }
+                if (popupElemOpen) {
+                    // popupElemOpen.style.top = '69px';
+                    popupElemOpen.classList.remove('popup-scrolled');
+                    popupElemOpen.classList.add('popup-scrolled-bot');
+                }
             } else {
                 if (headerRef.current) {
                     headerRef.current.style.background = 'transparent';
@@ -76,6 +88,18 @@ const Header = () => {
                     if (imgRef.current) {
                         imgRef.current.style.width = '60px';
                     }
+                }
+                const popupElem = document.querySelector('.base-Popup-root') as HTMLElement;
+                const popupElemOpen = document.querySelector('.base--open') as HTMLElement;
+                if (popupElem) {
+                    // popupElem.style.top = '110px';
+                    popupElem.classList.add('popup-scrolled');
+                    popupElem.classList.remove('popup-scrolled-bot');
+                }
+                if (popupElemOpen) {
+                    // popupElemOpen.style.top = '110px';
+                    popupElemOpen.classList.add('popup-scrolled');
+                    popupElemOpen.classList.remove('popup-scrolled-bot');
                 }
             }
         };

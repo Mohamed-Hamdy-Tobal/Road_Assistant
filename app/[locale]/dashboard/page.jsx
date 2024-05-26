@@ -38,7 +38,6 @@ const options = [
 
 const Table = () => {
 
-
     const [serviceType, setServiceType] = useState('')
 
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -52,12 +51,6 @@ const Table = () => {
     if (typeof window !== "undefined" && window.localStorage) {
         tokenLocal = localStorage.getItem("token")
     }
-
-    React.useEffect(() => {
-        if (isLoggedIn === 'empty') {
-            router.push(`/${localActive}/login`);
-        }
-    }, [isLoggedIn, router, localActive]);
 
     // For Location
     useEffect(() => {
@@ -103,7 +96,6 @@ const Table = () => {
     };
 
 
-
     // For Modal State Type
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -122,6 +114,14 @@ const Table = () => {
     };
 
     console.log("Data In Dash : , ", data)
+
+
+    // Check Auth
+    React.useEffect(() => {
+        if (isLoggedIn === 'empty') {
+            router.push(`/${localActive}/login`);
+        }
+    }, [isLoggedIn, router, localActive]);
 
 
     return (

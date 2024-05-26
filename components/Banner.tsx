@@ -54,7 +54,7 @@ const Banner = ({ bannerTitle, path, bref }: BannerProps) => {
                     <h5 className='text-mainColor text-[18px] font-bold'>{bref}</h5>
                     <h3 className='title text-center'>{bannerTitle}</h3>
                     <div className='path z-[2]'>
-                        <Link href='/' className='hover:text-mainColor transition-all'><FontAwesomeIcon icon={faHome} /> {localActive == 'en'? "Home":"الرئيسية"}</Link>
+                        <Link href={`/${localActive}/`} className='hover:text-mainColor transition-all'><FontAwesomeIcon icon={faHome} /> {localActive == 'en'? "Home":"الرئيسية"}</Link>
                         <span className='sec-path'>{path}</span>
                     </div>
                 </div>

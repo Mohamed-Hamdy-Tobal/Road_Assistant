@@ -1,5 +1,3 @@
-'use client'
-
 export default function notFound() {
     return (
         <html>

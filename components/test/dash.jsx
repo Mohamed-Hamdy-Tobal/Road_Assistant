@@ -1,4 +1,9 @@
 "use client";
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { postTableData, setFilter, setUserLocation } from '@/redux/slices/tableSlice';
+import { useRouter } from 'next/navigation';
+import { useLocale } from "next-intl";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import List from '@mui/material/List';
@@ -8,18 +13,15 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { postTableData, setFilter, setUserLocation } from '@/redux/slices/tableSlice';
-import { useRouter } from 'next/navigation';
-import { useLocale } from "next-intl";
-import GoogleMapIcon from "@/components/Dashboard/GoogleMapIcon"
-import WhatsAppPhone from "@/components/Dashboard/WhatsAppPhone"
-import PhoneDialer from "@/components/Dashboard/PhoneDialer"
-import HeaderDashboard from "@/components/Dashboard/HeaderDashboard"
-import dynamic from 'next/dynamic'
-import Loading from '@/components/Loading'
+import GoogleMapIcon from "@/components/Dashboard/GoogleMapIcon";
+import WhatsAppPhone from "@/components/Dashboard/WhatsAppPhone";
+import PhoneDialer from "@/components/Dashboard/PhoneDialer";
+import HeaderDashboard from "@/components/Dashboard/HeaderDashboard";
+import dynamic from 'next/dynamic';
+import Loading from '@/components/Loading';
 import { toast } from 'react-toastify';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 const optionsRadius = [5, 10, 15, 20];
 const options = [
@@ -37,46 +39,36 @@ const options = [
 ];
 
 const Table = () => {
-
-    const [serviceType, setServiceType] = useState('')
+    const [serviceType, setServiceType] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
 
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
     const { data, filter, status, error } = useSelector((state) => state.table);
 
     const dispatch = useDispatch();
     const router = useRouter();
-    const localActive = useLocale()
+    const localActive = useLocale();
 
-    let tokenLocal = 'empty'
+    let tokenLocal = 'empty';
     if (typeof window !== "undefined" && window.localStorage) {
-        tokenLocal = localStorage.getItem("token")
+        tokenLocal = localStorage.getItem("token");
     }
 
-    // For Location
     useEffect(() => {
         if (status === 'idle') {
-            // Get the user's location\
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const { latitude, longitude } = position.coords;
-                        console.log("Location form Dashbaord : ", latitude, longitude)
-                        dispatch(setUserLocation({ lat: latitude, lon: longitude }));
-                    },
-                    (error) => {
-                        console.error("Error getting user location:", error);
-                    }
-                );
-            }
-            // if geolocation is not supported by the users browser
-            else {
-                console.error('Geolocation is not supported by this browser.');
-            }
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const { latitude, longitude } = position.coords;
+                    dispatch(setUserLocation({ lat: latitude, lon: longitude }));
+                },
+                (error) => {
+                    console.error("Error getting user location:", error);
+                }
+            );
         }
     }, [status, dispatch]);
 
-
-    // For The Radius
     useEffect(() => {
         dispatch(setFilter(10));
     }, [dispatch]);
@@ -94,16 +86,14 @@ const Table = () => {
         const selectedFilter = optionsRadius[index];
         dispatch(setFilter(selectedFilter));
         dispatch(postTableData(serviceType));
-        console.log("selectedFilter radius : ", selectedFilter)
-        console.log("serviceType in  radius : ", serviceType)
+        console.log("selectedFilter radius : ", selectedFilter);
+        console.log("serviceType in radius : ", serviceType);
     };
 
     const handleClose = () => {
         setAnchorEl(null);
     };
 
-
-    // For Modal State Type
     const [modalOpen, setModalOpen] = useState(false);
 
     const handleOpenModal = () => {
@@ -115,28 +105,33 @@ const Table = () => {
     };
 
     const handleServiceSelect = (service) => {
-        setServiceType(service)
-        dispatch(postTableData(service)); // Dispatch with the selected service
+        setServiceType(service);
+        dispatch(postTableData(service));
         handleCloseModal();
     };
 
-    console.log("Data In Dash : , ", data)
+    console.log("Data In Dash : , ", data);
 
-
-    // Check Auth
-    React.useEffect(() => {
+    useEffect(() => {
         if (isLoggedIn === 'empty') {
             router.push(`/${localActive}/login`);
         }
     }, [isLoggedIn, router, localActive]);
 
-
-    // If Error From Server
     useEffect(() => {
         if (status === 'failed') {
             toast.error(`Error with server: ${error}`);
         }
     }, [status, error]);
+
+    const handlePageChange = (event, value) => {
+        setCurrentPage(value);
+    };
+
+    const nearbyServiceProviders = data?.nearby_service_providers || [];
+    const currentData = nearbyServiceProviders.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+    console.log("currentData : , ", currentData)
+
 
     return (
         <div className="dashboard">
@@ -194,10 +189,9 @@ const Table = () => {
                     </Button>
                 </div>
 
-
                 <div className='relative overflow-x-auto'>
                     <table className='w-full text-sm text-left rtl:text-right text-gray-500 '>
-                        <thead className='text-xs text-gray-700 uppercase bg-gray-50 '>
+                        <thead className='text-xs text-gray-700 uppercase bg-gray-50  '>
                             <tr>
                                 <th scope="col" className="px-6 py-3">Name</th>
                                 <th scope="col" className="px-6 py-3">Job</th>
@@ -206,8 +200,8 @@ const Table = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {status === 'succeeded' && data.nearby_service_providers.length > 0 ?
-                                data.nearby_service_providers.map((item) => (
+                            {status === 'succeeded' && currentData.length > 0 ?
+                                currentData.map((item) => (
                                     <tr className="bg-white border-b " key={item.id}>
                                         <td className="px-6 py-4">{item.username}</td>
                                         <td className="px-6 py-4">{item.service_type}</td>
@@ -219,6 +213,17 @@ const Table = () => {
                         </tbody>
                     </table>
                 </div>
+
+                {data.nearby_service_providers > 10 ? (
+                    <Stack spacing={2} className="my-5">
+                        <Pagination
+                            count={Math.ceil(data.nearby_service_providers.length / itemsPerPage)}
+                            page={currentPage}
+                            onChange={handlePageChange}
+                            color="primary"
+                        />
+                    </Stack>
+                ) : ""}
 
                 <ServiceModal
                     open={modalOpen}
@@ -259,4 +264,4 @@ const style = {
     p: 4,
 };
 
-export default dynamic(() => Promise.resolve(Table), { ssr: false })
+export default dynamic(() => Promise.resolve(Table), { ssr: false });

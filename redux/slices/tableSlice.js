@@ -60,7 +60,7 @@ const tableSlice = createSlice({
         setUserLocation(state, action) {
             const { lat, lon } = action.payload;
             state.userLocation = `Point ( ${lat} ${lon})`;
-            // console.log("userLocation : ", state.userLocation);
+            console.log("userLocation : ", state.userLocation);
         },
     },
     extraReducers: (builder) => {

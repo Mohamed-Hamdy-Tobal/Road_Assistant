@@ -7,7 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import RootLayoutRouting from "@/components/RootLayoutRouting";
 import { ToastContainer } from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/';
+import "react-toastify/ReactToastify.css"
 import Providers from '@/redux/Provider'
 
 

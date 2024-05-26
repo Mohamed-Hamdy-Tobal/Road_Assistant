@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setMessage } from "./message";
 import AuthService from "../service/auth.service";
 import { toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 

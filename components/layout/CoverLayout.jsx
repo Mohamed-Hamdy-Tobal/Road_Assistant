@@ -11,7 +11,7 @@ const Cover = ({ children, content, ...rest }) => {
                     <div className='page-container relative h-full flex flex-auto flex-col'>
                         <div className="grid lg:grid-cols-3 h-full">
                             <div
-                                className="col-span-2 bg-no-repeat bg-cover py-6 px-16 flex-col justify-between bg-white dark:bg-gray-800 hidden lg:flex"
+                                className="col-span-2 bg-no-repeat bg-cover py-6 px-16 flex-col justify-between bg-white  hidden lg:flex"
                                 style={{
                                     backgroundImage: `url('/car-bg-2.jpg')`,
                                 }}
@@ -30,7 +30,7 @@ const Cover = ({ children, content, ...rest }) => {
                                     <span className="font-semibold">{`Road Assistant`}</span>{' '}
                                 </span>
                             </div>
-                            <div className="relative flex flex-col justify-center items-center bg-white dark:bg-gray-800">
+                            <div className="relative flex flex-col justify-center items-center bg-white ">
                                 <div className="block lg:hidden absolute left-[32px] top-[10px]">
                                     <Link href={'/'}><Logo mode="dark" imgClass='w-[45px]'/></Link>
                                 </div>

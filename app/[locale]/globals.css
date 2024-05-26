@@ -625,7 +625,7 @@ label {
 .base-Popup-root {
     z-index: 100 !important;
     position: fixed !important;
-    top: 110px !important;
+    top: 80px !important;
     right: 20px !important;
     transform: none !important;
     left: auto !important;
@@ -647,4 +647,27 @@ label {
 }
 .popup-scrolled-bot {
     top: 56px !important;
+}
+.shad {
+    box-shadow: 0 8px 4px -7px rgba(115,115,115,0.3) !important;
+}
+body > .base-Popup-root:first-of-type {
+    top: 56px !important;
+}
+body > .base-Popup-root:first-child {
+    top: 56px !important;
+}
+body > .base-Popup-root:nth-child(1) {
+    top: 56px !important;
+}
+body > .base-Popup-root:nth-of-type(1) {
+    top: 56px !important;
+}
+/* .popup-scrolled:last-child {
+    background-color: red;
+} */
+.dashboard .MuiAvatar-root {
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 22px !important;
 }

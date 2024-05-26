@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { LeftRight, bottomVariants } from '@/components/animation';
 import { motion } from 'framer-motion';

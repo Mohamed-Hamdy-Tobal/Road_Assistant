@@ -83,7 +83,7 @@ const Header = () => {
                 if (headerRef.current) {
                     headerRef.current.style.background = 'transparent';
                     // headerRef.current.style.background = '#0E1036';
-                    headerRef.current.style.padding = '50px 0px';
+                    headerRef.current.style.padding = '38px 0px';
                     headerRef.current.style.boxShadow = 'none';
                     if (imgRef.current) {
                         imgRef.current.style.width = '60px';
@@ -113,9 +113,9 @@ const Header = () => {
 
 
     return (
-        <header id="main-header" className="fixed py-[50px] px-0 top-0 left-0 w-full z-50 transition-all duration-300" ref={headerRef}>
+        <header id="main-header" className="fixed py-[38px] px-0 top-0 left-0 w-full z-50 transition-all duration-300" ref={headerRef}>
             <div className="container flex justify-between items-center gap-[30px] sm:gap-0 sm:flex-row">
-                <Link href='/' className="block flex-1">
+                <Link href={`/${localActive}/`} className="block flex-1">
                     <Image src="/logo.svg" alt='logo' ref={imgRef} width={60} height={20} />
                 </Link>
                 <div className="main-menu-mobile flex justify-end items-center flex-row-reverse">

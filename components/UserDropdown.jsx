@@ -58,7 +58,6 @@ export default function MenuTransitions() {
                         </Avatar>
                     </MenuButton>
                     <Menu slots={{ listbox: AnimatedListbox }}>
-
                         <div class="py-2 px-3 flex items-center gap-2">
                             <span class="avatar avatar-circle avatar-md">
                                 <Avatar sx={{ bgcolor: "#e68c3a" }}>

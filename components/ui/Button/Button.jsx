@@ -1,3 +1,4 @@
+"use client"
 import { forwardRef } from 'react';
 import { useConfig } from '../ConfigProvider';
 import { useForm } from '../Form/context';

@@ -1,3 +1,4 @@
+"use client"
 import { FormContextProvider, FormContextConsumer } from './context';
 import { SIZES, LAYOUT } from '../util/constants';
 import { useConfig } from '../ConfigProvider/ConfigProvider';

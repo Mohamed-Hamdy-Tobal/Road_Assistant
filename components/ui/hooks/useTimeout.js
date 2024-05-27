@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useRef, useCallback } from 'react';
 
 function useTimeout(fn, ms = 0, enabled = true) {

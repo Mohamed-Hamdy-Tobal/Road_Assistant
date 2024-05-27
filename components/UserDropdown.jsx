@@ -65,7 +65,7 @@ export default function MenuTransitions() {
                                 </Avatar>
                             </span>
                             <div>
-                                <div class="font-bold text-gray-900 dark:text-gray-100">{user.first_name} {user.last_name}</div>
+                                <div class="font-bold text-gray-900">{user.first_name} {user.last_name}</div>
                                 <div class="text-xs text-[#6b7280]">{user.email}</div>
                             </div>
                         </div>
@@ -199,7 +199,7 @@ const MenuItem = styled(BaseMenuItem)(
     }
 
     &.${menuItemClasses.focusVisible} {
-        outline: 3px solid ${theme.palette.mode === 'dark' ? blue[600] : blue[200]};
+        outline: 3px solid ${theme.palette.mode === 'dark' ? green[600] : green[200]};
         background-color: ${theme.palette.mode === 'dark' ? grey[800] : grey[100]};
         color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
     }
@@ -209,8 +209,8 @@ const MenuItem = styled(BaseMenuItem)(
     }
 
     &:hover:not(.${menuItemClasses.disabled}) {
-        background-color: ${theme.palette.mode === 'dark' ? blue[900] : blue[50]};
-        color: ${theme.palette.mode === 'dark' ? blue[100] : blue[900]};
+        background-color: ${theme.palette.mode === 'dark' ? green[900] : green[50]};
+        color: ${theme.palette.mode === 'dark' ? green[100] : green[900]};
     }
     `,
 );

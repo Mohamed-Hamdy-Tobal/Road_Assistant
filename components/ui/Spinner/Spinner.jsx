@@ -1,3 +1,4 @@
+"use client"
 import { forwardRef } from 'react';
 import { CgSpinner } from 'react-icons/cg';
 import { useConfig } from '../ConfigProvider/ConfigProvider';

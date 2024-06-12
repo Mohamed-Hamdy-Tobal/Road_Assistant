@@ -393,4 +393,4 @@ const style = {
     p: 4,
 };
 
-export default dynamic(() => Promise.resolve(DashboardContent), { ssr: false });
+export default DashboardContent

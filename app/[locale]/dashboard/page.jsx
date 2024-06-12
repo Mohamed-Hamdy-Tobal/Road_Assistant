@@ -1,7 +1,7 @@
 import React from 'react'
 import DashboardContent from "@/components/Dashboard/DashboardContent";
 
-const page = () => {
+const Dashboard = () => {
     return (
         <div className="main-dash py-[30px]">
             <div className="container ">
@@ -11,4 +11,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Dashboard

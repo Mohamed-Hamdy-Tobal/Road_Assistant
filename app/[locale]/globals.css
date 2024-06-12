@@ -743,3 +743,12 @@ table >tbody>tr:hover>* {
 .css-1omp2b7:hover {
     background-color: rgb(105 194 14 / 10%) !important;
 }
+.MuiListItemButton-root {
+    width: 200px;
+    background: #fff !important;
+}
+.css-1uwabd6:hover {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    background-color: initial !important;
+}

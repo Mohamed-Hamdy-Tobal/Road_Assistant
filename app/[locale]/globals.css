@@ -714,9 +714,11 @@ body > .base-Popup-root:nth-of-type(1) {
     /* left: 480px !important; */
     min-width: 170px !important;
 }
+.css-1km1ehz.Mui-selected,
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
     background-color: rgb(27 210 25 / 16%) !important;
 }
+.css-1km1ehz:hover,
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover {
     -webkit-text-decoration: none;
     text-decoration: none;

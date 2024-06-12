@@ -77,14 +77,14 @@ const LocalSwitcher = () => {
                 <div className="absolute mt-1 w-20 bg-white border border-gray-100 rounded-md shadow-lg">
                     <div
                         onClick={() => onSelectChange('en')}
-                        className={`py-2 px-4 cursor-pointer hover:bg-gray-300 ${localActive === 'en' ? 'bg-[#ddd]' : ''
+                        className={`py-2 px-4 cursor-pointer hover:bg-[#0eb6400f] ${localActive === 'en' ? 'bg-[#1bd21929]' : ''
                             }`}
                     >
                         EN
                     </div>
                     <div
                         onClick={() => onSelectChange('ar')}
-                        className={`py-2 px-4 cursor-pointer hover:bg-gray-300 ${localActive === 'ar' ? 'bg-[#ddd]' : ''
+                        className={`py-2 px-4 cursor-pointer hover:bg-[#0eb6400f] ${localActive === 'ar' ? 'bg-[#1bd21929]' : ''
                             }`}
                     >
                         AR

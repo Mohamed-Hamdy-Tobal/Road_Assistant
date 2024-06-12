@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import "../../components/styles/app.css"; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+/* Define scrollbar styles */
+::-webkit-scrollbar {
+    width: 10px;
+    background: #fcfcfcee;
+    /* Width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #36ca62;
+    border-radius: 5px;
+    /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #209a44;
+    /* Color of the scrollbar handle on hover */
+}
+
+
+*,
+::after,
+::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+/* html {
+    scroll-behavior: smooth;
+} */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+.home-route {
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    /* gap: 8px; */
+}
+.home-route span {
+    font-size: 18px;
+    width: 36px !important;
+}
+.home-route span svg{
+    width: 25px;
+}

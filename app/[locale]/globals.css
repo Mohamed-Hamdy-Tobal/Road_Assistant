@@ -752,3 +752,28 @@ table >tbody>tr:hover>* {
     text-decoration: none;
     background-color: initial !important;
 }
+
+.not-fount-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.label-4o4 {
+    color: #E68C3A;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 1.25rem;
+}
+.main-404-img  {
+    flex: 1 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.img-404  {
+    width: 100%;
+    height: 100%;
+}

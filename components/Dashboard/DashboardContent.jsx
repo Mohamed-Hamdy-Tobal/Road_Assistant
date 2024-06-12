@@ -325,25 +325,17 @@ const DashboardContent = () => {
                 </div>
 
                 {data.nearby_service_providers > 10 ? (
-                    <Stack spacing={2} className="my-5">
-                        <Pagination
-                            count={Math.ceil(data.nearby_service_providers.length / itemsPerPage)}
-                            page={currentPage}
-                            onChange={handlePageChange}
-                            color="primary"
-                        />
-                    </Stack>
+                    <div className="mt-6">
+                        <Stack spacing={2} className="my-5">
+                            <Pagination
+                                count={Math.ceil(data.nearby_service_providers.length / itemsPerPage)}
+                                page={currentPage}
+                                onChange={handlePageChange}
+                                color="primary"
+                            />
+                        </Stack>
+                    </div>
                 ) : ""}
-                <div className="mt-6">
-                    <Stack spacing={2} className="my-5">
-                        <Pagination
-                            count={Math.ceil(data.nearby_service_providers.length / itemsPerPage)}
-                            page={currentPage}
-                            onChange={handlePageChange}
-                            color="primary"
-                        />
-                    </Stack>
-                </div>
 
                 <ServiceModal
                     open={modalOpen}

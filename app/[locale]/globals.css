@@ -671,3 +671,75 @@ body > .base-Popup-root:nth-of-type(1) {
     height: 46px !important;
     font-size: 22px !important;
 }
+.svg-dash img,
+.svg-dash svg {
+    width: 100% !important;
+    height: 100% !important;
+}
+.css-1wnsr1i {
+    width: auto !important;
+    height: 100% !important;
+    overflow-y: scroll !important;
+}
+@media (max-width: 567px) {
+    .css-1wnsr1i {
+        width: 280px !important;
+    }
+}
+
+.btn-select-dash {
+    border: 2px solid #DFDFDF;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #224C17;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 170px;
+    height: 45px;
+}
+.css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root:hover {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    background-color: unset !important;
+}
+.css-8je8zh-MuiTouchRipple-root {
+    display: none !important;
+}
+
+.MuiPaper-root {
+    /* left: 480px !important; */
+    min-width: 170px !important;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected {
+    background-color: rgb(27 210 25 / 16%) !important;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    background-color: rgb(14 182 64 / 6%) !important;
+}
+
+table tbody>:not([hidden])~:not([hidden]) {
+    --tw-divide-y-reverse: 0;
+    border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+    border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+    --tw-divide-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-divide-opacity));
+}
+
+table >tbody>tr:hover>* {
+    background-color: #f3f4f680;
+}
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #224C17 !important;
+}
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover {
+    background-color: #3f912b !important;
+}
+.css-1omp2b7:hover {
+    background-color: rgb(105 194 14 / 10%) !important;
+}

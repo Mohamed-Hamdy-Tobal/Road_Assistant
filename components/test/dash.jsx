@@ -141,53 +141,56 @@ const Table = () => {
 
             <div className='my-[100px]'>
 
-                <div className='mb-5 flex justify-center items-center'>
-                    <List
-                        component="nav"
-                        aria-label="Device settings"
-                        sx={{ bgcolor: 'background.paper' }}
-                    >
-                        <ListItemButton
-                            id="lock-button"
-                            aria-haspopup="listbox"
-                            aria-controls="lock-menu"
-                            aria-label="radius in km"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClickListItem}
+                <div className='flex items-center gap-5'>
+                    <div className='mb-5 flex justify-center items-center'>
+                        <List
+                            component="nav"
+                            aria-label="Device settings"
+                            sx={{ bgcolor: 'background.paper' }}
                         >
-                            <ListItemText
-                                primary="Radius in km"
-                                secondary={optionsRadius[selectedIndex]}
-                            />
-                        </ListItemButton>
-                    </List>
-                    <Menu
-                        id="lock-menu"
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={handleClose}
-                        MenuListProps={{
-                            'aria-labelledby': 'lock-button',
-                            role: 'listbox',
-                        }}
-                    >
-                        {optionsRadius.map((option, index) => (
-                            <MenuItem
-                                key={option}
-                                selected={index === selectedIndex}
-                                onClick={(event) => handleMenuItemClick(event, index)}
+                            <ListItemButton
+                                id="lock-button"
+                                aria-haspopup="listbox"
+                                aria-controls="lock-menu"
+                                aria-label="radius in km"
+                                aria-expanded={open ? 'true' : undefined}
+                                onClick={handleClickListItem}
                             >
-                                {option}
-                            </MenuItem>
-                        ))}
-                    </Menu>
+                                <ListItemText
+                                    primary="Radius in km"
+                                    secondary={optionsRadius[selectedIndex]}
+                                />
+                            </ListItemButton>
+                        </List>
+                        <Menu
+                            id="lock-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            MenuListProps={{
+                                'aria-labelledby': 'lock-button',
+                                role: 'listbox',
+                            }}
+                        >
+                            {optionsRadius.map((option, index) => (
+                                <MenuItem
+                                    key={option}
+                                    selected={index === selectedIndex}
+                                    onClick={(event) => handleMenuItemClick(event, index)}
+                                >
+                                    {option}
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </div>
+
+                    <div className='text-center mb-5'>
+                        <Button variant="outlined" color="primary" onClick={handleOpenModal}>
+                            Select Service
+                        </Button>
+                    </div>
                 </div>
 
-                <div className='text-center mb-5'>
-                    <Button variant="outlined" color="primary" onClick={handleOpenModal}>
-                        Select Service
-                    </Button>
-                </div>
 
                 <div className='relative overflow-x-auto'>
                     <table className='w-full text-sm text-left rtl:text-right text-gray-500 '>

@@ -15,7 +15,7 @@ const GoogleMapIcon = ({ latitude, longitude }) => {
         <FontAwesomeIcon
             icon={faMapMarkerAlt}
             onClick={handleClick}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'pointer', color: "#3aa7e6" }}
         />
     );
 };

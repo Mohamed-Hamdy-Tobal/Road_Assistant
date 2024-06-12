@@ -11,11 +11,13 @@ const WhatsAppPhone = ({ phoneNumber }) => {
     };
 
     return (
-        <FontAwesomeIcon
-            icon={faWhatsapp}
-            onClick={handleClick}
-            style={{ cursor: 'pointer' }}
-        />
+        <span>
+            <FontAwesomeIcon
+                icon={faWhatsapp}
+                onClick={handleClick}
+                style={{ cursor: 'pointer', color: "#25D366" }}
+            />
+        </span>
     );
 };
 

@@ -48,9 +48,13 @@ const Download = () => {
                                 </div>
                             </div>
                         </motion.div>
-                        <div className={`box-image hidden lg:block lg:w-[40%] ${localActive == 'en'? 'h-[275px]':'h-[312px]'}`}>
+                        <div className={`box-image hidden lg:block lg:w-[40%] ${localActive == 'en' ? 'h-[275px]' : 'h-[312px]'}`}>
                             <div className="wrap-image relative">
-                                <Image width={500} height={400} className={`absolute z-10 max-w-full h-auto ${localActive == 'en' ? 'top-[-85px]' : 'top-[-105px]'} w-[360px] left-0`} src={`/helpo-cover-facebook-Recovered-${localActive == 'en' ? 'en' : 'ar'}.png`} alt="image" />
+                                {localActive == 'en' ? (
+                                    <Image width={380} height={400} className={`absolute z-10 max-w-full left-0 bottom-[-455px]`} src={`/phone2-en.png`} alt="image" />
+                                ) : (
+                                    <Image width={300} height={400} className={`absolute z-10 max-w-full left-0 top-[-180px]`} src={`/phone-ar.png`} alt="image" />
+                                )}
                             </div>
                         </div>
                     </div>

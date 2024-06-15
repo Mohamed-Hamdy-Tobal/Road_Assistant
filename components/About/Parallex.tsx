@@ -63,8 +63,8 @@ const ParallaxComponent: React.FC = () => {
         >
             <div className="mytarget flex justify-center items-center ">
                 <div className={` mt-[90px] max-w-[77%] md:max-w-[78%] 2xl:max-w-full lg:mt-4 mb-24 flex justify-center lg:justify-end ml-0 mr-0 ${localActive == 'en' ? 'lg:ml-40' : "lg:mr-40"}  relative`}>
-                    <div className="max-w-[80%] md:max-w-full relative inline-flex justify-end items-end bg-transparent" >
-                        <Image width={500} height={400} className="z-10 max-w-full h-auto" src="/doble-phone.png"  alt="image" />
+                    <div className="max-w-[100%] sm:max-w-[80%] md:max-w-full relative inline-flex justify-center items-end bg-transparent" >
+                        <Image width={500} height={400} className="max-w-[110%] sm:max-w-[100%] z-10 h-auto" src="/doble-phone.png"  alt="image" />
                     </div>
                 </div>
             </div>

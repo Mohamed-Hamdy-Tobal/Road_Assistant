@@ -22,7 +22,7 @@ const Cover = ({ children, content, ...rest }) => {
                                         Welcome back to Our App
                                     </h3>
                                     <p className="text-lg text-white opacity-80 max-w-[700px]">
-                                        Elstar comes with a complete set of UI components crafted with Tailwind CSS, it fulfilled most of the use case to create modern and beautiful UI and application
+                                        The Road Assistant app designed to assist drivers with essential services such as gas refills, windshield cleaning, and towing. It provides a modern and intuitive interface to ensure a seamless and efficient driving experience.
                                     </p>
                                 </div>
                                 <span className="text-white text-[14px]">

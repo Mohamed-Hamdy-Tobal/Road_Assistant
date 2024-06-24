@@ -42,35 +42,10 @@ const login = async (username, password) => {
     }
 };
 
-// const logout = async () => {
-//     console.log("Before Logout :", token);
-//     let token;
-//     if (typeof window !== "undefined") { // Check if window is defined
-//         localStorage.removeItem("user");
-//         token = localStorage.getItem("token");
-//         localStorage.removeItem("token");
-//     }
-//     console.log("Logout token:", token);
-
-//     try {
-//         const response = await axios.post(
-//             "https://geodjango-test-no-docker.onrender.com/api/logout/",
-//             { token } // Include token in the body
-//         );
-//         console.log("Logout successful:", response.data);
-//         return response.data;
-//     } catch (error) {
-//         console.error("Error during logout:", error);
-//         throw error; // Re-throw the error after logging it
-//     }
-// };
-
-
 
 const AuthService = {
     register,
     login,
-    // logout,
 }
 
 export default AuthService;

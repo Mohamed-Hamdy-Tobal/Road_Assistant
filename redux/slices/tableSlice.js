@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 const initialState = {
     data: [],
-    filter: 10,
+    filter: 10, // Filter In KM, init is 10km
     status: 'idle',
     error: null,
     userLocation: null,
@@ -14,7 +14,7 @@ const initialState = {
 export const postTableData = createAsyncThunk('table/postTableData', async (serviceType, { getState }) => {
     const state = getState();
     const token = localStorage.getItem('token');
-    const userLocation = state.table.userLocation;
+    const userLocation = state.table.userLocation; // From Table Reducer
     const filter = state.table.filter;
 
     console.log("Data Before Send In Table Dashboard:");
@@ -70,7 +70,7 @@ const tableSlice = createSlice({
             })
             .addCase(postTableData.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                state.data = action.payload;
+                state.data = action.payload;  // Data From Response
             })
             .addCase(postTableData.rejected, (state, action) => {
                 state.status = 'failed';

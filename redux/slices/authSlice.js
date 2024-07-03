@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 
 
-// Helper function to get initial state
 const getInitialState = () => {
     if (typeof window !== "undefined" && window.localStorage) {
         const user = JSON.parse(localStorage.getItem("user"));

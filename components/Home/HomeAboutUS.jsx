@@ -5,9 +5,11 @@ import Link from 'next/link'
 import React from 'react'
 import { motion } from "framer-motion"
 import { bottomVariants } from '@/components/animation'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useLocale } from "next-intl";
+import ReactGA from 'react-ga4';
+
 
 const dataAboutEN = {
     title: "Learn more about us",
@@ -38,25 +40,32 @@ const HomeAboutUS = () => {
     console.log("About localActive : ", localActive)
     const dataAbout = localActive == 'en' ? dataAboutEN : dataAboutAR
 
+    const handleButtonClick = () => {
+        ReactGA.event({
+            category: 'User',
+            action: 'Clicked a button View More Service'
+        });
+    };
+
     return (
         <div id='about' className="about overflow-hidden">
             <div className="about-main md:pb-14 pt-44">
                 <div className="container" >
-                    <div className={`${localActive == 'ar' ? 'reflect-landing reflect-dir':''} flex flex-col lg:flex-row flex-wrap items-center justify-between`}>
+                    <div className={`${localActive == 'ar' ? 'reflect-landing reflect-dir' : ''} flex flex-col lg:flex-row flex-wrap items-center justify-between`}>
                         <motion.div className="main-info w-full lg:w-[50%]" initial='initial' whileInView='animate'>
                             <div className="mb-16">
                                 <div className="space-y-4">
                                     <span className="text-secoColor font-bold">{dataAbout.title}</span>
                                     <h3 className="text-[38px] leading[1.25] font-bold mb-6 text-[#222222]">{dataAbout.mainABout}</h3>
                                     {dataAbout.info.map((item, idx) => (
-                                        <div key={idx} className={`flex gap-3 ${localActive == 'ar'? "flex-row-reverse":""}`}>
+                                        <div key={idx} className={`flex gap-3 ${localActive == 'ar' ? "flex-row-reverse" : ""}`}>
                                             <span className={`checked-icon-about-${idx}`}><FontAwesomeIcon icon={faCheck} size="lg" color="green" /></span>
                                             <p className="mb-4 text-[#666666] text-[18px] leading-7 font-normal pb-[10px]">{item}</p>
                                         </div>
                                     ))}
                                 </div>
                                 <motion.div className="my-btn mt-[40px]" variants={bottomVariants}>
-                                    <Link href={`/${localActive}/services`} className="btn inline-block">{dataAbout.btn}</Link>
+                                    <Link onClick={handleButtonClick} href={`/${localActive}/services`} className="btn inline-block">{dataAbout.btn}</Link>
                                 </motion.div>
                             </div>
                         </motion.div>
